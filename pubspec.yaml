@@ -26,3 +26,5 @@ flutter:
   assets:
   - assets/backgrounds/
   - assets/logo/
+  - assets/other/
+  - assets/covers/
