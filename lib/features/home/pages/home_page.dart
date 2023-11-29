@@ -14,10 +14,14 @@ class HomePage extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
                 child: Container(
-                  height: 450,
+                  height: 466,
                   decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/covers/lucyfer_cover.jpg'),
+                        fit: BoxFit.cover,
+                        alignment: Alignment.topCenter),
                     color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.elliptical(10, 10)),
                   ),
@@ -88,10 +92,13 @@ class HomePage extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          cardExample(),
-          cardExample(),
-          cardExample(),
-          cardExample(),
+          cardExample('assets/covers/thewitcher_cover.jpg'),
+          cardExample('assets/covers/elite_cover.jpg'),
+          cardExample('assets/covers/breakingbad_cover.jpg'),
+          cardExample('assets/covers/peakyblinders_cover.jpg'),
+          cardExample('assets/covers/friends_cover.jpg'),
+          cardExample('assets/covers/you_cover.jpg'),
+          cardExample('assets/covers/dark_cover.jpg'),
         ],
       ),
     );
@@ -102,10 +109,13 @@ class HomePage extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          cardExample(),
-          cardExample(),
-          cardExample(),
-          cardExample(),
+          cardExample('assets/covers/toyboy_cover.jpg'),
+          cardExample('assets/covers/13reasonswhy_cover.jpg'),
+          cardExample('assets/covers/the100_cover.jpg'),
+          cardExample('assets/covers/lacasadepapel_cover.jpg'),
+          cardExample('assets/covers/anne_cover.jpg'),
+          cardExample('assets/covers/ateacher_cover.jpg'),
+          cardExample('assets/covers/behindhereyes_cover.jpg'),
         ],
       ),
     );
@@ -116,10 +126,13 @@ class HomePage extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          cardExample(),
-          cardExample(),
-          cardExample(),
-          cardExample(),
+          cardExample('assets/covers/caos_cover.jpg'),
+          cardExample('assets/covers/dahmer_cover.jpg'),
+          cardExample('assets/covers/lucyfer_cover.jpg'),
+          cardExample('assets/covers/lupin_cover.jpg'),
+          cardExample('assets/covers/cargo_cover.jpg'),
+          cardExample('assets/covers/control_cover.jpg'),
+          cardExample('assets/covers/daybreak_cover.jpg'),
         ],
       ),
     );
@@ -130,17 +143,22 @@ class HomePage extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          cardExample(),
-          cardExample(),
-          cardExample(),
-          cardExample(),
+          cardExample('assets/covers/sexeducation_cover.jpg'),
+          cardExample('assets/covers/prisonbreak_cover.jpg'),
+          cardExample('assets/covers/thequeensgambit_cover.jpg'),
+          cardExample('assets/covers/toyboy_cover.jpg'),
+          cardExample('assets/covers/thesilence_cover.jpg'),
+          cardExample('assets/covers/ginnygeorgia_cover.jpg'),
+          cardExample('assets/covers/iamnotokaywiththis_cover.jpg'),
         ],
       ),
     );
   }
 
-  Card cardExample() {
+  Card cardExample(String cover) {
     return Card(
+      color: Colors.transparent,
+      semanticContainer: false,
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -148,12 +166,14 @@ class HomePage extends StatelessWidget {
         onTap: () {
           debugPrint('Card tapped.');
         },
-        child: const Padding(
-          padding: EdgeInsets.all(15),
-          child: SizedBox(
-            width: 100,
-            height: 150,
-            child: Text('A card that can be tapped'),
+        child: Container(
+          width: 115,
+          height: 165,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(cover),
+                fit: BoxFit.fill,
+                alignment: Alignment.topCenter),
           ),
         ),
       ),
