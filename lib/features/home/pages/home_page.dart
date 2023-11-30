@@ -15,16 +15,50 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
-                child: Container(
-                  height: 466,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/covers/lucyfer_cover.jpg'),
-                        fit: BoxFit.cover,
-                        alignment: Alignment.topCenter),
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.all(Radius.elliptical(10, 10)),
-                  ),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 466,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image:
+                                AssetImage('assets/covers/lucyfer_cover.jpg'),
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter),
+                        color: Colors.grey,
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(10, 10)),
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        const SizedBox(
+                          height: 412,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Expanded(
+                              child: playButton(),
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Expanded(
+                              child: myListButton(),
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
               Row(
@@ -36,6 +70,19 @@ class HomePage extends StatelessWidget {
                     'My list',
                     style: categoryNameStyle(),
                   ),
+                  const Expanded(child: SizedBox()),
+                  InkWell(
+                    onTap: () {},
+                    child: const SizedBox(
+                      child: Text(
+                        'View all',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  )
                 ],
               ),
               myList(),
@@ -75,8 +122,61 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               onlyOnNetflix(),
+              const SizedBox(
+                height: 30,
+              )
             ],
           )),
+    );
+  }
+
+  ElevatedButton myListButton() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(
+          const Color(0xFF32302D),
+        ),
+      ),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.add,
+            size: 25,
+          ),
+          SizedBox(
+            width: 3,
+          ),
+          Text(
+            'My list',
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        ],
+      ),
+    );
+  }
+
+  ElevatedButton playButton() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+      ),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.play_arrow,
+            color: Colors.black,
+            size: 25,
+          ),
+          SizedBox(
+            width: 3,
+          ),
+          Text('Play', style: TextStyle(color: Colors.black, fontSize: 18)),
+        ],
+      ),
     );
   }
 
