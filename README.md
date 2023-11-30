@@ -2,4 +2,8 @@
 
 Just making netflix app copy for practise ;D
 
+![changes](https://github.com/KacperMajcher/netflix_copy/assets/142928291/4e61792b-8633-4954-bb8a-9768be9b7a2c)
+
+![changes](https://github.com/KacperMajcher/netflix_copy/assets/142928291/0f49a753-990c-425c-8369-85fe330eed51)
+
 ![changes](https://github.com/KacperMajcher/netflix_copy/assets/142928291/59968d86-4ade-4fdd-a291-0fc08062b0a4)

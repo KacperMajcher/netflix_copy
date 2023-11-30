@@ -1,132 +1,141 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_copy/features/details/pages/details_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: backgroundGradient(),
-      child: Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: appBar(),
-          body: ListView(
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 466,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image:
-                                AssetImage('assets/covers/lucyfer_cover.jpg'),
-                            fit: BoxFit.cover,
-                            alignment: Alignment.topCenter),
-                        color: Colors.grey,
-                        borderRadius:
-                            BorderRadius.all(Radius.elliptical(10, 10)),
-                      ),
-                    ),
-                    Column(
+    return Scaffold(
+      body: InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const DetailsPage()));
+        },
+        child: Container(
+          decoration: backgroundGradient(),
+          child: Scaffold(
+              backgroundColor: Colors.transparent,
+              appBar: appBar(),
+              body: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 30),
+                    child: Stack(
                       children: [
-                        const SizedBox(
-                          height: 412,
+                        Container(
+                          height: 466,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/covers/lucyfer_cover.jpg'),
+                                fit: BoxFit.cover,
+                                alignment: Alignment.topCenter),
+                            color: Colors.grey,
+                            borderRadius:
+                                BorderRadius.all(Radius.elliptical(10, 10)),
+                          ),
                         ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        Column(
                           children: [
                             const SizedBox(
-                              width: 15,
+                              height: 412,
                             ),
-                            Expanded(
-                              child: playButton(),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Expanded(
-                              child: myListButton(),
-                            ),
-                            const SizedBox(
-                              width: 15,
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                  child: playButton(),
+                                ),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                Expanded(
+                                  child: myListButton(),
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ],
                     ),
-                  ],
-                ),
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 10,
                   ),
-                  Text(
-                    'My list',
-                    style: categoryNameStyle(),
-                  ),
-                  const Expanded(child: SizedBox()),
-                  InkWell(
-                    onTap: () {},
-                    child: const SizedBox(
-                      child: Text(
-                        'View all',
-                        style: TextStyle(color: Colors.white),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10,
                       ),
-                    ),
+                      Text(
+                        'My list',
+                        style: categoryNameStyle(),
+                      ),
+                      const Expanded(child: SizedBox()),
+                      InkWell(
+                        onTap: () {},
+                        child: const SizedBox(
+                          child: Text(
+                            'View all',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      )
+                    ],
                   ),
+                  myList(),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'European series',
+                        style: categoryNameStyle(),
+                      ),
+                    ],
+                  ),
+                  europeanSeries(),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Popular now',
+                        style: categoryNameStyle(),
+                      ),
+                    ],
+                  ),
+                  popularNow(),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Netflix exclusives',
+                        style: categoryNameStyle(),
+                      ),
+                    ],
+                  ),
+                  onlyOnNetflix(),
                   const SizedBox(
-                    width: 20,
+                    height: 30,
                   )
                 ],
-              ),
-              myList(),
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'European series',
-                    style: categoryNameStyle(),
-                  ),
-                ],
-              ),
-              europeanSeries(),
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Popular now',
-                    style: categoryNameStyle(),
-                  ),
-                ],
-              ),
-              popularNow(),
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Netflix exclusives',
-                    style: categoryNameStyle(),
-                  ),
-                ],
-              ),
-              onlyOnNetflix(),
-              const SizedBox(
-                height: 30,
-              )
-            ],
-          )),
+              )),
+        ),
+      ),
     );
   }
 
@@ -171,9 +180,7 @@ class HomePage extends StatelessWidget {
             color: Colors.black,
             size: 25,
           ),
-          SizedBox(
-            width: 3,
-          ),
+          SizedBox(width: 3),
           Text('Play', style: TextStyle(color: Colors.black, fontSize: 18)),
         ],
       ),
