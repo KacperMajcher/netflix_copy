@@ -94,6 +94,7 @@ class _DetailsPageState extends State<DetailsPage> {
         child: SizedBox(
           child: TabBar(
             labelColor: Colors.white,
+            dividerHeight: 0,
             indicatorColor: Colors.red,
             indicator: const BoxDecoration(
               border: Border(
@@ -102,7 +103,7 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
             tabAlignment: TabAlignment.start,
             isScrollable: true,
-            labelPadding: const EdgeInsets.symmetric(horizontal: 5),
+            labelPadding: const EdgeInsets.symmetric(horizontal: 7),
             labelStyle: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
