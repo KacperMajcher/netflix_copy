@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,24 +8,26 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: InkWell(
-        onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const DetailsPage()));
-        },
-        child: Container(
-          decoration: backgroundGradient(),
-          child: Scaffold(
-              backgroundColor: Colors.transparent,
-              appBar: appBar(),
-              body: ListView(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 30),
-                    child: Stack(
-                      children: [
-                        Container(
+      body: Container(
+        decoration: backgroundGradient(),
+        child: Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: appBar(),
+            body: ListView(
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                  child: Stack(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()));
+                        },
+                        child: Container(
                           height: 466,
                           decoration: const BoxDecoration(
                             image: DecorationImage(
@@ -37,140 +40,153 @@ class HomePage extends StatelessWidget {
                                 BorderRadius.all(Radius.elliptical(10, 10)),
                           ),
                         ),
-                        Column(
-                          children: [
-                            const SizedBox(
-                              height: 412,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  width: 15,
-                                ),
-                                Expanded(
-                                  child: playButton(),
-                                ),
-                                const SizedBox(
-                                  width: 20,
-                                ),
-                                Expanded(
-                                  child: myListButton(),
-                                ),
-                                const SizedBox(
-                                  width: 15,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 10,
                       ),
-                      Text(
-                        'My list',
-                        style: categoryNameStyle(),
-                      ),
-                      const Expanded(child: SizedBox()),
-                      InkWell(
-                        onTap: () {},
-                        child: const SizedBox(
-                          child: Text(
-                            'View all',
-                            style: TextStyle(color: Colors.white),
+                      Column(
+                        children: [
+                          const SizedBox(
+                            height: 412,
                           ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(
+                                width: 12,
+                              ),
+                              Expanded(
+                                child: playButton(),
+                              ),
+                              const SizedBox(
+                                width: 12,
+                              ),
+                              Expanded(
+                                child: myListButton(),
+                              ),
+                              const SizedBox(
+                                width: 12,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'My list',
+                      style: categoryNameStyle(),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    InkWell(
+                      onTap: () {},
+                      child: const SizedBox(
+                        child: Text(
+                          'View all',
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
-                      const SizedBox(
-                        width: 20,
-                      )
-                    ],
-                  ),
-                  myList(),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'European series',
-                        style: categoryNameStyle(),
-                      ),
-                    ],
-                  ),
-                  europeanSeries(),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Popular now',
-                        style: categoryNameStyle(),
-                      ),
-                    ],
-                  ),
-                  popularNow(),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Netflix exclusives',
-                        style: categoryNameStyle(),
-                      ),
-                    ],
-                  ),
-                  onlyOnNetflix(),
-                  const SizedBox(
-                    height: 30,
-                  )
-                ],
-              )),
-        ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    )
+                  ],
+                ),
+                myList(),
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'European series',
+                      style: categoryNameStyle(),
+                    ),
+                  ],
+                ),
+                europeanSeries(),
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Popular now',
+                      style: categoryNameStyle(),
+                    ),
+                  ],
+                ),
+                popularNow(),
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Netflix exclusives',
+                      style: categoryNameStyle(),
+                    ),
+                  ],
+                ),
+                onlyOnNetflix(),
+                const SizedBox(
+                  height: 30,
+                )
+              ],
+            )),
       ),
     );
   }
 
-  ElevatedButton myListButton() {
+  Widget myListButton() {
     return ElevatedButton(
       onPressed: () {},
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(
           const Color(0xFF32302D),
         ),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
+        ),
       ),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.add,
-            size: 25,
+            size: 23,
+            color: Colors.white,
           ),
-          SizedBox(
+          const SizedBox(
             width: 3,
           ),
           Text(
             'My list',
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: GoogleFonts.openSans(
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
           ),
+          const SizedBox(width: 3),
         ],
       ),
     );
   }
 
-  ElevatedButton playButton() {
+  Widget playButton() {
     return ElevatedButton(
       onPressed: () {},
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
+        ),
       ),
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -178,10 +194,15 @@ class HomePage extends StatelessWidget {
           Icon(
             Icons.play_arrow,
             color: Colors.black,
-            size: 25,
+            size: 29,
           ),
           SizedBox(width: 3),
-          Text('Play', style: TextStyle(color: Colors.black, fontSize: 18)),
+          Text('Play',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600)),
+          SizedBox(width: 3),
         ],
       ),
     );
@@ -194,7 +215,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView myList() {
+  Widget myList() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -211,7 +232,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView europeanSeries() {
+  Widget europeanSeries() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -228,7 +249,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView popularNow() {
+  Widget popularNow() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -245,7 +266,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView onlyOnNetflix() {
+  Widget onlyOnNetflix() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -262,7 +283,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Card cardExample(String cover) {
+  Widget cardExample(String cover) {
     return Card(
       color: Colors.transparent,
       semanticContainer: false,
@@ -294,15 +315,15 @@ class HomePage extends StatelessWidget {
       flexibleSpace: smallLogo(),
       title: Row(
         children: [
-          const Text('For You, Xyz'),
+          const Text(
+            'For You, Xyz',
+            style: TextStyle(color: Colors.white),
+          ),
           const Expanded(child: SizedBox()),
           castIconButton(),
           IconButton(
             onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              weight: 49,
-            ),
+            icon: const Icon(Icons.search, weight: 49, color: Colors.white),
           ),
         ],
       ),
@@ -321,17 +342,15 @@ class HomePage extends StatelessWidget {
         ]));
   }
 
-  IconButton castIconButton() {
+  Widget castIconButton() {
     return IconButton(
       onPressed: () {},
-      icon: const ImageIcon(
-        AssetImage('assets/other/cast.png'),
-        size: 40,
-      ),
+      icon: const ImageIcon(AssetImage('assets/other/cast.png'),
+          size: 40, color: Colors.white),
     );
   }
 
-  Container smallLogo() {
+  Widget smallLogo() {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -339,7 +358,7 @@ class HomePage extends StatelessWidget {
           alignment: Alignment.bottomLeft,
         ),
       ),
-      margin: const EdgeInsets.only(top: 54, left: 13, bottom: 12),
+      margin: const EdgeInsets.only(top: 65, left: 13, bottom: 12),
       width: 30,
       height: 30,
     );
