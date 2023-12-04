@@ -35,24 +35,26 @@ class Episodes extends StatelessWidget {
                       )),
                     ),
                     const SizedBox(width: 4),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '1. Pilot',
-                          style: GoogleFonts.openSans(
-                              fontSize: 13, color: Colors.white),
-                        ),
-                        Text(
-                          '44 min',
-                          style: GoogleFonts.openSans(
-                            fontSize: 11,
-                            color: const Color(0xFF535250),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '1. Pilot',
+                            style: GoogleFonts.openSans(
+                                fontSize: 13, color: Colors.white),
                           ),
-                        ),
-                      ],
+                          Text(
+                            '44 min',
+                            style: GoogleFonts.openSans(
+                              fontSize: 11,
+                              color: const Color(0xFF535250),
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
                     ),
-                    const Expanded(child: SizedBox()),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(
@@ -98,41 +100,45 @@ class Episodes extends StatelessWidget {
                       )),
                     ),
                     const SizedBox(width: 4),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '2. Lucifer, Stay. Good Devil.',
-                          style: GoogleFonts.openSans(
-                              fontSize: 13, color: Colors.white),
-                        ),
-                        Text(
-                          '47 min',
-                          style: GoogleFonts.openSans(
-                            fontSize: 11,
-                            color: const Color(0xFF535250),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '2. Lucifer, Stay. Good Devil.',
+                            style: GoogleFonts.openSans(
+                                fontSize: 13, color: Colors.white),
+                            overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
+                          Text(
+                            '47 min',
+                            style: GoogleFonts.openSans(
+                              fontSize: 11,
+                              color: const Color(0xFF535250),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    const Expanded(child: SizedBox()),
                     IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.file_download_outlined,
-                          size: 30,
-                          color: Colors.white,
-                        )),
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.file_download_outlined,
+                        size: 30,
+                        color: Colors.white,
+                      ),
+                    ),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Text(
-                      'Lucifer and Detective Chloe Decker join forces to solve a mysterious murder. Lucifer reveals his otherworldly abilities, surprising Chloe but also drawing her into collaboration.',
-                      style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        color: const Color(0xFF918F8C),
-                      )),
+                    'Lucifer and Detective Chloe Decker join forces to solve a mysterious murder. Lucifer reveals his otherworldly abilities, surprising Chloe but also drawing her into collaboration.',
+                    style: GoogleFonts.openSans(
+                      fontSize: 13,
+                      color: const Color(0xFF918F8C),
+                    ),
+                  ),
                 )
               ],
             ),
@@ -161,24 +167,26 @@ class Episodes extends StatelessWidget {
                       )),
                     ),
                     const SizedBox(width: 4),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '3. The Would-Be Prince of Darkness',
-                          style: GoogleFonts.openSans(
-                              fontSize: 13, color: Colors.white),
-                        ),
-                        Text(
-                          '47 min',
-                          style: GoogleFonts.openSans(
-                            fontSize: 11,
-                            color: const Color(0xFF535250),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '3. The Would-Be Prince of Darkness',
+                            style: GoogleFonts.openSans(
+                                fontSize: 13, color: Colors.white),
+                            overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
+                          Text(
+                            '47 min',
+                            style: GoogleFonts.openSans(
+                              fontSize: 11,
+                              color: const Color(0xFF535250),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    const Expanded(child: SizedBox()),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(
@@ -191,11 +199,12 @@ class Episodes extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Text(
-                      'Lucifer is drawn into an investigation involving kidnapping, leading him into the dangerous underworld of Los Angeles crime. Meanwhile, Chloe learns about Lucifer\'s mysterious past.',
-                      style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        color: const Color(0xFF918F8C),
-                      )),
+                    'Lucifer is drawn into an investigation involving kidnapping, leading him into the dangerous underworld of Los Angeles crime. Meanwhile, Chloe learns about Lucifer\'s mysterious past.',
+                    style: GoogleFonts.openSans(
+                      fontSize: 13,
+                      color: const Color(0xFF918F8C),
+                    ),
+                  ),
                 )
               ],
             ),
