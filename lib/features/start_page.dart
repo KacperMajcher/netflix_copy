@@ -27,8 +27,8 @@ class StartPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 170,
+              const Expanded(
+                child: SizedBox(),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 35),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_copy/shared_widgets/button_row.dart';
 
-Widget downloadButton() {
+Widget myListButton() {
   return ElevatedButton(
     onPressed: () {},
     style: ElevatedButton.styleFrom(
@@ -10,7 +10,6 @@ Widget downloadButton() {
         borderRadius: BorderRadius.all(Radius.circular(4)),
       ),
     ),
-    child:
-        buttonRow('Download C1:E1', Icons.file_download_outlined, Colors.white),
+    child: buttonRow('My list', Icons.add, Colors.white),
   );
 }
