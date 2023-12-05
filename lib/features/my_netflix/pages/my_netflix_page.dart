@@ -48,7 +48,10 @@ class MyNetflix extends StatelessWidget {
                 const SizedBox(height: 13),
                 continueWatching(
                     'Continue watching', categoryContinueWatching()),
-                const SizedBox(height: 2000),
+                const SizedBox(height: 13),
+                recentlyWatched('Recently watched', 'Episode cover',
+                    'Episode title', context),
+                const SizedBox(height: 13),
               ],
             ),
           ),
