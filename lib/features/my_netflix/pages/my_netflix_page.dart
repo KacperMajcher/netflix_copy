@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_copy/features/my_netflix/widgets/account_button.dart';
 import 'package:netflix_copy/features/my_netflix/widgets/my_netflix_buttons.dart';
+import 'package:netflix_copy/features/my_netflix/widgets/notification_card.dart';
 import 'package:netflix_copy/shared_widgets/cast_icon_button.dart';
 import 'package:netflix_copy/shared_widgets/navigation_bar.dart';
 
@@ -20,13 +21,18 @@ class MyNetflix extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: ListView(
-              children: const [
-                SizedBox(height: 9),
-                AccountButton(),
-                SizedBox(height: 24),
-                NotificationRow(),
-                SizedBox(height: 40),
-                DownloadedRow(),
+              children: [
+                const SizedBox(height: 9),
+                const AccountButton(),
+                const SizedBox(height: 24),
+                const NotificationRow(),
+                const SizedBox(height: 5),
+                notificationCard('Available now', 'Notification 1', 'Season 6',
+                    '07.12', context),
+                notificationCard('Keep watching', 'Notification 2', 'Lucyfer',
+                    '04.12', context),
+                const SizedBox(height: 34),
+                const DownloadedRow(),
               ],
             ),
           ),
