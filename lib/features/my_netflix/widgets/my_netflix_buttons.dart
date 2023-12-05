@@ -32,3 +32,37 @@ Widget myNetflixButtons(String text, IconData icon, Color iconColor,
     ],
   );
 }
+
+class NotificationRow extends StatelessWidget {
+  const NotificationRow({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: myNetflixButtons(
+          'Notifications',
+          Icons.notifications,
+          Colors.white,
+          const Color(0xFFEF1707),
+          Icons.arrow_forward_ios_rounded),
+    );
+  }
+}
+
+class DownloadedRow extends StatelessWidget {
+  const DownloadedRow({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: myNetflixButtons(
+          'Downloaded',
+          Icons.file_download_outlined,
+          Colors.white,
+          const Color.fromARGB(255, 2, 115, 207),
+          Icons.arrow_forward_ios_rounded),
+    );
+  }
+}

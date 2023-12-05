@@ -1,7 +1,10 @@
+import 'package:flutter/material.dart';
 
-  import 'package:flutter/material.dart';
+class NetflixLogoSmall extends StatelessWidget {
+  const NetflixLogoSmall({super.key});
 
-Widget smallLogo() {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -12,3 +15,4 @@ Widget smallLogo() {
       height: 40,
     );
   }
+}

@@ -9,11 +9,11 @@ Widget notificationCard(
   String date,
   BuildContext context,
 ) {
-  
+
   return InkWell(
-    
+
     onTap: () {
-      
+
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => const DetailsPage()));
     },

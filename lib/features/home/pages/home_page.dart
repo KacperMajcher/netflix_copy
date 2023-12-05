@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
-import 'package:netflix_copy/features/home/widgets/category_section.dart';
-import 'package:netflix_copy/features/home/widgets/categories.dart';
-import 'package:netflix_copy/shared_widgets/cast_icon_button.dart';
-import 'package:netflix_copy/shared_widgets/my_list_button.dart';
+import 'package:netflix_copy/shared_widgets/category_section.dart';
+import 'package:netflix_copy/shared_widgets/categories.dart';
+import 'package:netflix_copy/shared_widgets/icons/cast_icon_button.dart';
+import 'package:netflix_copy/shared_widgets/buttons/my_list_button.dart';
 import 'package:netflix_copy/shared_widgets/navigation_bar.dart';
-import 'package:netflix_copy/shared_widgets/play_button.dart';
-import 'package:netflix_copy/shared_widgets/small_logo.dart';
+import 'package:netflix_copy/shared_widgets/buttons/play_button.dart';
+import 'package:netflix_copy/shared_widgets/logos/netflix_logo_small.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -57,18 +57,18 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Column(
+                    const Column(
                       children: [
-                        const SizedBox(height: 412),
+                        SizedBox(height: 412),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const SizedBox(width: 12),
-                            Expanded(child: playButton()),
-                            const SizedBox(width: 12),
-                            Expanded(child: myListButton()),
-                            const SizedBox(width: 12),
+                            SizedBox(width: 12),
+                            Expanded(child: PlayButton()),
+                            SizedBox(width: 12),
+                            Expanded(child: MyListButton()),
+                            SizedBox(width: 12),
                           ],
                         ),
                       ],
@@ -95,13 +95,13 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       title: Row(
         children: [
-          smallLogo(),
+          const NetflixLogoSmall(),
           const Text(
             'For You, Xyz',
             style: TextStyle(color: Colors.white),
           ),
           const Spacer(),
-          castIconButton(),
+          const CastIconButton(),
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.search, size: 27, color: Colors.white),

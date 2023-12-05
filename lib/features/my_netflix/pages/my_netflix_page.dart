@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_copy/shared_widgets/categories.dart';
 import 'package:netflix_copy/features/my_netflix/widgets/account_button.dart';
 import 'package:netflix_copy/features/my_netflix/widgets/downloaded_episodes_list.dart';
 import 'package:netflix_copy/features/my_netflix/widgets/my_netflix_buttons.dart';
 import 'package:netflix_copy/features/my_netflix/widgets/notification_card.dart';
-import 'package:netflix_copy/shared_widgets/cast_icon_button.dart';
+import 'package:netflix_copy/shared_widgets/icons/cast_icon_button.dart';
+import 'package:netflix_copy/shared_widgets/category_section.dart';
 import 'package:netflix_copy/shared_widgets/navigation_bar.dart';
 
 class MyNetflix extends StatelessWidget {
@@ -37,6 +39,9 @@ class MyNetflix extends StatelessWidget {
                 const SizedBox(height: 3),
                 const DownloadedEpisodesList(),
                 const SizedBox(height: 20),
+                categorySectionShare(
+                    'Movies and series that you like', categoryShare(),
+                    showViewAll: true),
               ],
             ),
           ),
@@ -60,7 +65,7 @@ class MyNetflix extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          castIconButton(),
+          const CastIconButton(),
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.search, size: 27, color: Colors.white),

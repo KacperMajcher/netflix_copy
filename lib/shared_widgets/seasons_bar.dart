@@ -30,11 +30,12 @@ class SeasonsBar extends StatelessWidget {
         ),
         const Expanded(child: SizedBox()),
         IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.info,
-              color: Color.fromARGB(255, 201, 193, 193),
-            ))
+          onPressed: () {},
+          icon: const Icon(
+            Icons.info,
+            color: Color(0xFFC9C1C1),
+          ),
+        ),
       ],
     );
   }

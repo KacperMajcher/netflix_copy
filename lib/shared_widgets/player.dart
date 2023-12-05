@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-Widget player() {
+class Player extends StatelessWidget {
+  const Player({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       height: 222,
       decoration: const BoxDecoration(
@@ -24,3 +28,4 @@ Widget player() {
       child: const SizedBox.shrink(),
     );
   }
+}

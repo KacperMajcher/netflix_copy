@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_copy/features/start_page.dart';
+import 'package:netflix_copy/features/start/pages/start_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

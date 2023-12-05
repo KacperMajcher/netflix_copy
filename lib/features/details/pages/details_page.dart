@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_copy/features/details/widgets/episodes.dart';
+import 'package:netflix_copy/features/details/widgets/episodes_list.dart';
 import 'package:netflix_copy/features/details/widgets/more_likely.dart';
 import 'package:netflix_copy/features/details/widgets/trailers_and_more.dart';
-import 'package:netflix_copy/shared_widgets/action_buttons.dart';
+import 'package:netflix_copy/shared_widgets/buttons/action_buttons.dart';
 import 'package:netflix_copy/shared_widgets/cast_list.dart';
-import 'package:netflix_copy/shared_widgets/download_button.dart';
+import 'package:netflix_copy/shared_widgets/buttons/download_button.dart';
 import 'package:netflix_copy/shared_widgets/episode_description.dart';
 import 'package:netflix_copy/shared_widgets/episode_title.dart';
-import 'package:netflix_copy/shared_widgets/netflix_series_logo.dart';
-import 'package:netflix_copy/shared_widgets/play_button.dart';
+import 'package:netflix_copy/shared_widgets/logos/netflix_series_logo.dart';
+import 'package:netflix_copy/shared_widgets/buttons/play_button.dart';
 import 'package:netflix_copy/shared_widgets/player.dart';
 import 'package:netflix_copy/shared_widgets/production_specyfication.dart';
 import 'package:netflix_copy/shared_widgets/production_title.dart';
@@ -23,7 +23,7 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsPageState extends State<DetailsPage> {
   final widgets = <Widget>[
-    const Episodes(),
+    const EpisodesList(),
     const MoreLikely(),
     const TrailersAndMore(),
   ];
@@ -40,7 +40,7 @@ class _DetailsPageState extends State<DetailsPage> {
       backgroundColor: Colors.black,
       body: ListView(
         children: [
-          player(),
+          const Player(),
           notes(),
           bookmarks(),
           widgets[selectedWidgetIndex],
@@ -60,23 +60,23 @@ class _DetailsPageState extends State<DetailsPage> {
           const SizedBox(height: 1),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const ProductionTitle(),
-                const SizedBox(height: 5),
-                const ProductionSpecyfication(),
-                playButton(),
-                downloadButton(),
-                const SizedBox(height: 4),
-                const EpisodeTitle(),
-                const SizedBox(height: 5),
-                const EpisodeDescription(),
-                const SizedBox(height: 8),
-                const CastList(),
-                const SizedBox(height: 10),
-                const ActionButtons(),
-                const SizedBox(height: 15),
+                ProductionTitle(),
+                SizedBox(height: 5),
+                ProductionSpecyfication(),
+                PlayButton(),
+                DownloadButton(),
+                SizedBox(height: 4),
+                EpisodeTitle(),
+                SizedBox(height: 5),
+                EpisodeDescription(),
+                SizedBox(height: 8),
+                CastList(),
+                SizedBox(height: 10),
+                ActionButtons(),
+                SizedBox(height: 15),
               ],
             ),
           ),

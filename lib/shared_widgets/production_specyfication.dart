@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_copy/shared_widgets/age_limit.dart';
+import 'package:netflix_copy/shared_widgets/icons/age_limit.dart';
 
 class ProductionSpecyfication extends StatelessWidget {
   const ProductionSpecyfication({
@@ -8,26 +8,26 @@ class ProductionSpecyfication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        const Text(
+        Text(
           '2021',
           style: TextStyle(
             color: Colors.white,
             fontSize: 14,
           ),
         ),
-        const SizedBox(width: 2),
-        ageLimit(),
-        const SizedBox(width: 4),
-        const Text(
+        SizedBox(width: 2),
+        AgeLimit(),
+        SizedBox(width: 4),
+        Text(
           '6 seasons',
           style: TextStyle(
             color: Colors.white,
             fontSize: 14,
           ),
         ),
-        const Icon(
+        Icon(
           Icons.hd_outlined,
           color: Color(0xFF4F4C4C),
           size: 19,

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_copy/shared_widgets/button_row.dart';
+import 'package:netflix_copy/shared_widgets/buttons/button_row.dart';
 
+class PlayButton extends StatelessWidget {
+  const PlayButton({super.key});
 
-Widget playButton() {
+  @override
+  Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
@@ -14,3 +17,4 @@ Widget playButton() {
       child: buttonRow('Play', Icons.play_arrow, Colors.black),
     );
   }
+}

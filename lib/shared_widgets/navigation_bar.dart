@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:netflix_copy/features/home/pages/home_page.dart';
-import 'package:netflix_copy/features/my_netflix_page/pages/my_netflix_page.dart';
+import 'package:netflix_copy/features/my_netflix/pages/my_netflix_page.dart';
 import 'package:netflix_copy/features/new_and_popular/pages/new_and_popular_page.dart';
 
 class NavigationBarWidget extends StatefulWidget {
@@ -66,6 +66,7 @@ class NavigationBarWidgetState extends State<NavigationBarWidget> {
                   image: AssetImage('assets/avatars/avatar.png'),
                   width: 25,
                 ),
+                
                 label: 'My Netflix',
               ),
             ],
