@@ -40,8 +40,15 @@ class MyNetflix extends StatelessWidget {
                 const DownloadedEpisodesList(),
                 const SizedBox(height: 20),
                 categorySectionShare(
-                    'Movies and series that you like', categoryShare(),
-                    showViewAll: true),
+                    'Movies and series that you like', categoryShare()),
+                const SizedBox(height: 13),
+                categorySectionShare('My list', category1(), showViewAll: true),
+                const SizedBox(height: 13),
+                categorySectionShare('Watched trailers', category2()),
+                const SizedBox(height: 13),
+                continueWatching(
+                    'Continue watching', categoryContinueWatching()),
+                const SizedBox(height: 2000),
               ],
             ),
           ),

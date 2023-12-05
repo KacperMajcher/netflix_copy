@@ -50,3 +50,10 @@ Widget categoryShare() => categoryRowShare([
       'you_cover.jpg',
       'dark_cover.jpg',
     ]);
+
+Widget categoryContinueWatching() => categoryRowContinueWatching([
+      'cargo_cover.jpg',
+      'control_cover.jpg',
+      'daybreak_cover.jpg',
+      'dahmer_cover.jpg',
+    ]);

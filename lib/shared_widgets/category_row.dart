@@ -21,3 +21,14 @@ Widget categoryRowShare(List<String> covers) {
     ),
   );
 }
+
+Widget categoryRowContinueWatching(List<String> covers) {
+  return SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    child: Row(
+      children: covers
+          .map((cover) => movieCardContinueWatching('assets/covers/$cover'))
+          .toList(),
+    ),
+  );
+}
