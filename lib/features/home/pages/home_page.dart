@@ -65,9 +65,17 @@ class HomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               SizedBox(width: 12),
-                              Expanded(child: PlayButton()),
+                              Expanded(
+                                  child: PlayButton(
+                                backgroundColor: Colors.white,
+                                textColor: Colors.black,
+                              )),
                               SizedBox(width: 12),
-                              Expanded(child: MyListButton()),
+                              Expanded(
+                                  child: MyListButton(
+                                textColor: Colors.white,
+                                backgroundColor: Color(0xFF32302D),
+                              )),
                               SizedBox(width: 12),
                             ],
                           ),

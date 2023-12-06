@@ -20,7 +20,10 @@ class _DetailsPageState extends State<DetailsPage> {
       backgroundColor: Colors.black,
       body: ListView(
         children: const [
-          Player(),
+          Player(
+            page: 'assets/pages/lucyfer_page.jpg',
+            borderRadiusValue: 12,
+          ),
           DetailsPageContent(),
         ],
       ),

@@ -6,7 +6,7 @@ import 'package:netflix_copy/features/details/widgets/trailers_and_more/trailers
 import 'package:netflix_copy/shared_widgets/buttons/action_buttons.dart';
 import 'package:netflix_copy/shared_widgets/cast_list.dart';
 import 'package:netflix_copy/shared_widgets/buttons/download_button.dart';
-import 'package:netflix_copy/shared_widgets/episode_description.dart';
+import 'package:netflix_copy/shared_widgets/description.dart';
 import 'package:netflix_copy/shared_widgets/episode_title.dart';
 import 'package:netflix_copy/shared_widgets/logos/netflix_series_logo.dart';
 import 'package:netflix_copy/shared_widgets/buttons/play_button.dart';
@@ -37,22 +37,33 @@ class _DetailsPageContentState extends State<DetailsPageContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 8),
-          const NetflixSeriesLogo(),
+          const NetflixSeriesLogo(logoSize: 16),
           const SizedBox(height: 1),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const ProductionTitle(),
+                const ProductionTitle(
+                  title: 'Lucyfer',
+                  fontSize: 18,
+                ),
                 const SizedBox(height: 5),
                 const ProductionSpecyfication(),
-                const PlayButton(),
+                const PlayButton(
+                  backgroundColor: Colors.white,
+                  textColor: Colors.black,
+                ),
                 const DownloadButton(),
                 const SizedBox(height: 4),
                 const EpisodeTitle(),
                 const SizedBox(height: 5),
-                const EpisodeDescription(),
+                const Description(
+                  description:
+                      'The bored devil abandons the role of the ruler of hell and moves to Los Angeles, where he opens a nightclub and begins accompanying the lady detective from the homicide department.',
+                  textColor: Colors.white,
+                  fontSize: 12,
+                ),
                 const SizedBox(height: 8),
                 const CastList(),
                 const SizedBox(height: 10),

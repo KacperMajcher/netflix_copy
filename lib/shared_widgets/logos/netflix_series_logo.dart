@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 class NetflixSeriesLogo extends StatelessWidget {
   const NetflixSeriesLogo({
     super.key,
+    required this.logoSize,
   });
+
+  final double logoSize;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Image(
-          image: AssetImage('assets/logo/small_netflix_logo.png'),
-          height: 16,
+          image: const AssetImage('assets/logo/small_netflix_logo.png'),
+          height: logoSize,
         ),
-        Row(
+        const Row(
           children: [
             Text(
               'SERIES',

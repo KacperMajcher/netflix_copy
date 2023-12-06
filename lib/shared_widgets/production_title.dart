@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 class ProductionTitle extends StatelessWidget {
   const ProductionTitle({
     super.key,
+    required this.title,
+    required this.fontSize,
   });
+
+  final String title;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'Lucyfer',
+    return Text(
+      title,
       style: TextStyle(
-        fontSize: 18,
+        fontSize: fontSize,
         color: Colors.white,
         fontWeight: FontWeight.bold,
         letterSpacing: 1,

@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
 class Player extends StatelessWidget {
-  const Player({super.key});
+  const Player(
+      {super.key, required this.page, required this.borderRadiusValue});
+
+  final String page;
+  final double borderRadiusValue;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 222,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(12),
-          topRight: Radius.circular(12),
+          topLeft: Radius.circular(borderRadiusValue),
+          topRight: Radius.circular(borderRadiusValue),
         ),
         image: DecorationImage(
-          image: AssetImage('assets/pages/lucyfer_page.jpg'),
+          image: AssetImage(page),
           fit: BoxFit.fill,
         ),
       ),

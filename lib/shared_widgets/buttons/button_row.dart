@@ -24,7 +24,7 @@ class ButtonRow extends StatelessWidget {
           style: GoogleFonts.openSans(
             color: iconColor,
             fontSize: 16,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
         const SizedBox(width: 3),

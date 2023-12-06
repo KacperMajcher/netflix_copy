@@ -16,6 +16,7 @@ class TrailerCard extends StatelessWidget {
       child: InkWell(
         child: SizedBox(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(children: [
                 Container(
@@ -38,14 +39,10 @@ class TrailerCard extends StatelessWidget {
                 ),
               ]),
               const SizedBox(height: 11),
-              Row(
-                children: [
-                  Text(
-                    title,
-                    style: titleStyle(),
-                    textAlign: TextAlign.start,
-                  ),
-                ],
+              Text(
+                title,
+                style: titleStyle(),
+                textAlign: TextAlign.start,
               ),
               const SizedBox(height: 1),
             ],
