@@ -8,24 +8,35 @@ class Player extends StatelessWidget {
     return Container(
       height: 222,
       decoration: const BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(12),
           topRight: Radius.circular(12),
         ),
         image: DecorationImage(
-          image: AssetImage(
-            'assets/pages/lucyfer_page.jpg',
-          ),
+          image: AssetImage('assets/pages/lucyfer_page.jpg'),
           fit: BoxFit.fill,
         ),
-        gradient: LinearGradient(
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          colors: [Colors.black, Colors.white],
-        ),
       ),
-      child: const SizedBox.shrink(),
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  Colors.black.withOpacity(1),
+                  Colors.black.withOpacity(0.2),
+                  Colors.black.withOpacity(0),
+                  Colors.black.withOpacity(0),
+                  Colors.black.withOpacity(0),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox.shrink(),
+        ],
+      ),
     );
   }
 }

@@ -14,8 +14,10 @@ class DownloadButton extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
       ),
-      child: buttonRow(
-          'Download C1:E1', Icons.file_download_outlined, Colors.white),
+      child: const ButtonRow(
+          text: 'Download C1:E1',
+          icon: Icons.file_download_outlined,
+          iconColor: Colors.white),
     );
   }
 }

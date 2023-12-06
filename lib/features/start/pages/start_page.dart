@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_copy/features/start/widgets/background_image.dart';
-import 'package:netflix_copy/features/start/widgets/sign_in_button.dart';
+import 'package:netflix_copy/shared_widgets/buttons/sign_in_button.dart';
 import 'package:netflix_copy/shared_widgets/logos/netflix_logo.dart';
 
 class StartPage extends StatelessWidget {

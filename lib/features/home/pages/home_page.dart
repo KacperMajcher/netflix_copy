@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
-import 'package:netflix_copy/shared_widgets/category_section.dart';
 import 'package:netflix_copy/shared_widgets/categories.dart';
+import 'package:netflix_copy/shared_widgets/categories/category.dart';
 import 'package:netflix_copy/shared_widgets/icons/cast_icon_button.dart';
 import 'package:netflix_copy/shared_widgets/buttons/my_list_button.dart';
 import 'package:netflix_copy/shared_widgets/navigation_bar.dart';
@@ -32,54 +32,63 @@ class HomePage extends StatelessWidget {
           body: ListView(
             children: [
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-                child: Stack(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const DetailsPage()));
-                      },
-                      child: Container(
-                        height: 466,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  AssetImage('assets/covers/lucyfer_cover.jpg'),
-                              fit: BoxFit.cover,
-                              alignment: Alignment.topCenter),
-                          color: Colors.grey,
-                          borderRadius:
-                              BorderRadius.all(Radius.elliptical(10, 10)),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                  child: Stack(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()));
+                        },
+                        child: Container(
+                          height: 466,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/covers/lucyfer_cover.jpg'),
+                                fit: BoxFit.cover,
+                                alignment: Alignment.topCenter),
+                            color: Colors.grey,
+                            borderRadius:
+                                BorderRadius.all(Radius.elliptical(10, 10)),
+                          ),
                         ),
                       ),
-                    ),
-                    const Column(
-                      children: [
-                        SizedBox(height: 412),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(width: 12),
-                            Expanded(child: PlayButton()),
-                            SizedBox(width: 12),
-                            Expanded(child: MyListButton()),
-                            SizedBox(width: 12),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              categorySection('My list', category1(), showViewAll: true),
-              categorySection('European series', category2()),
-              categorySection('Popular now', category3()),
-              categorySection('Netflix exclusives', category4()),
+                      const Column(
+                        children: [
+                          SizedBox(height: 412),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(width: 12),
+                              Expanded(child: PlayButton()),
+                              SizedBox(width: 12),
+                              Expanded(child: MyListButton()),
+                              SizedBox(width: 12),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  )),
+              Category(
+                  title: 'My list', category: category1(), showViewAll: true),
+              Category(
+                  title: 'European series',
+                  category: category2(),
+                  showViewAll: false),
+              Category(
+                  title: 'Popular now',
+                  category: category3(),
+                  showViewAll: false),
+              Category(
+                  title: 'Netflix exclusives',
+                  category: category4(),
+                  showViewAll: false),
               const SizedBox(height: 30),
             ],
           ),

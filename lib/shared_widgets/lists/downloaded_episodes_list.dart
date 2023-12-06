@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_copy/features/my_netflix/widgets/downloaded_card.dart';
+import 'package:netflix_copy/shared_widgets/cards/downloaded_card.dart';
 
 class DownloadedEpisodesList extends StatelessWidget {
   const DownloadedEpisodesList({
@@ -8,13 +8,13 @@ class DownloadedEpisodesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          downloadedCard('Cover X', '3', context),
-          downloadedCard('Cover Y', '5', context),
-          downloadedCard('Cover Z', '1', context),
+          DownloadedCard(header: 'Cover X', episodesCount: '3'),
+          DownloadedCard(header: 'Cover Y', episodesCount: '5'),
+          DownloadedCard(header: 'Cover Z', episodesCount: '1'),
         ],
       ),
     );

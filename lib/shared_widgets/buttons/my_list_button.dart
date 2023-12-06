@@ -14,7 +14,8 @@ class MyListButton extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
       ),
-      child: buttonRow('My list', Icons.add, Colors.white),
+      child: const ButtonRow(
+          text: 'My list', icon: Icons.add, iconColor: Colors.white),
     );
   }
 }

@@ -14,7 +14,8 @@ class PlayButton extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
       ),
-      child: buttonRow('Play', Icons.play_arrow, Colors.black),
+      child: const ButtonRow(
+          text: 'Play', icon: Icons.play_arrow, iconColor: Colors.black),
     );
   }
 }

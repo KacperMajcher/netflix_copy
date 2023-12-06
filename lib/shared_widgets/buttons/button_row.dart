@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget buttonRow(String text, IconData icon, Color iconColor) {
+class ButtonRow extends StatelessWidget {
+  const ButtonRow(
+      {super.key,
+      required this.text,
+      required this.icon,
+      required this.iconColor});
+
+  final String text;
+  final IconData icon;
+  final Color iconColor;
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -19,3 +31,4 @@ Widget buttonRow(String text, IconData icon, Color iconColor) {
       ],
     );
   }
+}
