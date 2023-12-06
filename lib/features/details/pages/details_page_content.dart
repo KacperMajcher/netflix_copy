@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_copy/features/details/widgets/episodes_list.dart';
 import 'package:netflix_copy/features/details/widgets/more_likely.dart';
-import 'package:netflix_copy/features/details/widgets/trailers_and_more.dart';
+import 'package:netflix_copy/features/details/widgets/trailers_and_more/trailers_and_more.dart';
 import 'package:netflix_copy/shared_widgets/buttons/action_buttons.dart';
 import 'package:netflix_copy/shared_widgets/cast_list.dart';
 import 'package:netflix_copy/shared_widgets/buttons/download_button.dart';
