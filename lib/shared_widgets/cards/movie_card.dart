@@ -8,9 +8,12 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+      ),
       color: Colors.transparent,
       semanticContainer: false,
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: () {},
