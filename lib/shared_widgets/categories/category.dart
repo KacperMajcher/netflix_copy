@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_copy/features/my_list/pages/my_list_page.dart';
 import 'package:netflix_copy/shared_widgets/categories/styles/category_name_style.dart';
 
 class Category extends StatefulWidget {
@@ -35,7 +36,10 @@ class _CategoryState extends State<Category> {
             ),
             if (widget.showViewAll)
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const MyList()));
+                },
                 child: const Text(
                   'View all',
                   style: TextStyle(color: Colors.white),

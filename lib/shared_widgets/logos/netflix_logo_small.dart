@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NetflixLogoSmall extends StatelessWidget {
-  const NetflixLogoSmall({super.key});
+  const NetflixLogoSmall({super.key, required this.size});
+
+  final double size;
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +13,8 @@ class NetflixLogoSmall extends StatelessWidget {
           image: AssetImage('assets/logo/small_netflix_logo.png'),
         ),
       ),
-      width: 40,
-      height: 40,
+      width: size,
+      height: size,
     );
   }
 }

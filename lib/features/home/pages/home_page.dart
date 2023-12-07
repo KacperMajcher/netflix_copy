@@ -112,7 +112,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       title: Row(
         children: [
-          const NetflixLogoSmall(),
+          const NetflixLogoSmall(size: 40),
           const Text(
             'For You, Xyz',
             style: TextStyle(color: Colors.white),
