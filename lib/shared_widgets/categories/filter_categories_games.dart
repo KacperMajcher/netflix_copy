@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_copy/shared_widgets/buttons/outlined_button.dart';
 
-class FilterCategories extends StatelessWidget {
-  const FilterCategories({
+class GamesFilterCategories extends StatelessWidget {
+  const GamesFilterCategories({
     super.key,
   });
 
@@ -15,16 +15,10 @@ class FilterCategories extends StatelessWidget {
         child: Row(
           children: [
             OutlinedButtonWidget(
-              text: 'Series and programs',
-            ),
-            OutlinedButtonWidget(
-              text: 'Films',
+              text: 'Started',
             ),
             OutlinedButtonWidget(
               text: 'Not started',
-            ),
-            OutlinedButtonWidget(
-              text: 'Continue watching',
             ),
           ],
         ),

@@ -13,7 +13,7 @@ class MyList extends StatefulWidget {
 
 class _MyListState extends State<MyList> {
   final widgets = <Widget>[
-    MoviesSeriesAndPrograms(),
+    const MoviesSeriesAndPrograms(),
     const Games(),
   ];
 
@@ -25,8 +25,8 @@ class _MyListState extends State<MyList> {
       backgroundColor: Colors.black,
       appBar: appBar(),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 7),

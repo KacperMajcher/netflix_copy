@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_copy/shared_widgets/logos/netflix_logo_small.dart';
 
-class MyListCard extends StatelessWidget {
-  const MyListCard({
+class MyListGameCard extends StatelessWidget {
+  const MyListGameCard({
     super.key,
     required this.title,
     required this.isNetflixOryginal,
+    required this.category,
   });
 
   final String title;
+  final String category;
   final bool isNetflixOryginal;
 
   @override
@@ -63,34 +65,40 @@ class MyListCard extends StatelessWidget {
                         Text(
                           title,
                           style: GoogleFonts.montserrat(
-                              fontSize: 13,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          category,
+                          style: GoogleFonts.montserrat(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w600,
+                              color: const Color.fromARGB(255, 89, 84, 84)),
                         ),
                       ],
                     ),
                   ),
                   ConstrainedBox(
                     constraints:
-                        const BoxConstraints.tightFor(width: 30, height: 30),
+                        const BoxConstraints.tightFor(width: 40, height: 40),
                     child: OutlinedButton(
                       onPressed: () {},
                       style: OutlinedButton.styleFrom(
                         padding: EdgeInsets.zero,
                         side: const BorderSide(
-                          width: 2,
-                          color: Colors.white,
+                          width: 1,
+                          color: Color.fromARGB(255, 79, 76, 76),
                           style: BorderStyle.solid,
                         ),
                       ),
                       child: const Icon(
-                        Icons.play_arrow,
+                        Icons.file_download_outlined,
                         color: Colors.white,
                         size: 20,
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 10),
+                  )
                 ],
               ),
             ],

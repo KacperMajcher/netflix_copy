@@ -38,7 +38,6 @@ class Player extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox.shrink(),
         ],
       ),
     );
