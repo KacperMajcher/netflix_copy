@@ -1,10 +1,9 @@
-
 part of 'home_cubit.dart';
 
 class HomeState {
   const HomeState({
-    this.movieModel,
+    this.movieModel = const [],
   });
 
-  final MovieModel? movieModel;
+  final List<MovieModel> movieModel;
 }

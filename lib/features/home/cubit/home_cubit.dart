@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix_copy/features/home/model/movie_model.dart';
-import 'package:netflix_copy/features/home/repository/movies_repository.dart';
+import 'package:netflix_copy/features/home/data/model/movie_model.dart';
+import 'package:netflix_copy/features/home/data/repository/movies_repository.dart';
 
 part 'home_state.dart';
 
@@ -11,7 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> getMovies() async {
     emit(const HomeState());
-    final movieModel = await _moviesRepository.getMovieModel();
+    final movieModel = await _moviesRepository.getMoviesModels();
     emit(
       HomeState(
         movieModel: movieModel,

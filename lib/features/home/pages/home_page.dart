@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
 import 'package:netflix_copy/features/home/cubit/home_cubit.dart';
-import 'package:netflix_copy/features/home/repository/movies_repository.dart';
+import 'package:netflix_copy/features/home/data/data_source/movies_remote_data_source.dart';
+import 'package:netflix_copy/features/home/data/repository/movies_repository.dart';
 import 'package:netflix_copy/shared_widgets/categories.dart';
 import 'package:netflix_copy/shared_widgets/categories/category.dart';
 import 'package:netflix_copy/shared_widgets/icons/cast_icon_button.dart';
@@ -17,10 +18,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(MoviesRepository())..getMovies(),
+      create: (context) => HomeCubit(
+          MoviesRepository(remoteDataSource: MoviesMockedDataSource()))
+        ..getMovies(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
-          final movieModel = state.movieModel; //movieModel from cubit
           return Scaffold(
             body: Container(
               decoration: const BoxDecoration(
@@ -54,13 +56,14 @@ class HomePage extends StatelessWidget {
                               },
                               child: Container(
                                 height: 466,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(movieModel?.page ?? ''),
+                                      image: AssetImage(
+                                          'assets/covers/13reasonswhy_cover.jpg'),
                                       fit: BoxFit.cover,
                                       alignment: Alignment.topCenter),
                                   color: Colors.grey,
-                                  borderRadius: const BorderRadius.all(
+                                  borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
                               ),
