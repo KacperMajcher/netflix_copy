@@ -10,4 +10,10 @@ class MovieModel {
   final String title;
   final String description;
   final bool netflixSeries;
+
+  MovieModel.fromJson(Map<String, dynamic> json)
+      : page = json['page'],
+        title = json['title'],
+        description = json['description'],
+        netflixSeries = json['netflix_series'];
 }

@@ -7,7 +7,11 @@ class MoviesRepository {
   final MoviesMockedDataSource remoteDataSource;
 
   Future<List<MovieModel>> getMoviesModels() async {
-    final movies = await remoteDataSource.getMovies();
-    return movies;
+    final json = await remoteDataSource.getMovies();
+    if (json == null) {
+      return [];
+    }
+    //converter
+    return json.map((item) => MovieModel.fromJson(item)).toList();
   }
 }
