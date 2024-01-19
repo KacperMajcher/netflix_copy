@@ -18,7 +18,7 @@ class NewAndPopularPage extends StatelessWidget {
       create: (context) => HomeCubit(
           MoviesRepository(remoteDataSource: MoviesMockedDataSource()))
         ..getMovies(),
-      child: BlocListener<HomeCubit, HomeState>(
+      child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
           if (state.status == Status.error) {
             final errorMessage = state.errorMessage ?? 'Unknown error';
@@ -30,23 +30,21 @@ class NewAndPopularPage extends StatelessWidget {
             );
           }
         },
-        child: BlocBuilder<HomeCubit, HomeState>(
-          builder: (context, state) {
-            return Scaffold(
-              backgroundColor: const Color(0xE7161515),
-              appBar: appBar(),
-              body: ListView(
-                children: [
-                  for (final movieModel in state.movieModel)
-                    NewAndPopularCard(
-                      movieModel: movieModel,
-                    ),
-                ],
-              ),
-              bottomNavigationBar: const NavigationBarWidget(),
-            );
-          },
-        ),
+        builder: (context, state) {
+          return Scaffold(
+            backgroundColor: const Color(0xE7161515),
+            appBar: appBar(),
+            body: ListView(
+              children: [
+                for (final movieModel in state.movieModel)
+                  NewAndPopularCard(
+                    movieModel: movieModel,
+                  ),
+              ],
+            ),
+            bottomNavigationBar: const NavigationBarWidget(),
+          );
+        },
       ),
     );
   }
