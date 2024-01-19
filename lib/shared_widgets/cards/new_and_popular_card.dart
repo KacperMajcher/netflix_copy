@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_copy/features/home/data/model/movie_model.dart';
 import 'package:netflix_copy/shared_widgets/buttons/my_list_button.dart';
 import 'package:netflix_copy/shared_widgets/buttons/play_button.dart';
 import 'package:netflix_copy/shared_widgets/description.dart';
@@ -9,16 +10,10 @@ import 'package:netflix_copy/shared_widgets/production_title.dart';
 class NewAndPopularCard extends StatelessWidget {
   const NewAndPopularCard({
     super.key,
-    required this.page,
-    required this.title,
-    required this.netflixSeries,
-    required this.description,
+    required this.movieModel,
   });
 
-  final String page;
-  final bool netflixSeries;
-  final String title;
-  final String description;
+  final MovieModel movieModel;
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +34,11 @@ class NewAndPopularCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Player(
-                    page: page,
+                    page: movieModel.page,
                     borderRadiusValue: 12,
                   ),
                   const SizedBox(height: 13),
-                  netflixSeries
+                  movieModel.netflixSeries
                       ? const NetflixSeriesLogo(
                           logoSize: 20,
                         )
@@ -56,15 +51,15 @@ class NewAndPopularCard extends StatelessWidget {
                       children: [
                         const SizedBox(width: 10),
                         ProductionTitle(
-                          title: title,
+                          title: movieModel.title,
                           fontSize: 25,
                         ),
                         const SizedBox(height: 8),
                         Description(
-                            description: description,
+                            description: movieModel.description,
                             textColor: const Color.fromARGB(255, 165, 153, 153),
                             fontSize: 14),
-                        netflixSeries
+                        movieModel.netflixSeries
                             ? const SizedBox(height: 15)
                             : const SizedBox(height: 30),
                         Row(

@@ -27,10 +27,7 @@ class NewAndPopularPage extends StatelessWidget {
                 for (final movieModel in state
                     .movieModel) //For each movie model in the mocked data source, it creates a movie card on the home page
                   NewAndPopularCard(
-                    page: movieModel.page,
-                    title: movieModel.title,
-                    netflixSeries: movieModel.netflixSeries,
-                    description: movieModel.description,
+                    movieModel: movieModel,
                   ),
               ],
             ),
