@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_copy/core/enums.dart';
 import 'package:netflix_copy/features/home/cubit/home_cubit.dart';
 import 'package:netflix_copy/features/home/data/data_source/movies_remote_data_source.dart';
 import 'package:netflix_copy/features/home/data/repository/movies_repository.dart';
@@ -17,23 +18,35 @@ class NewAndPopularPage extends StatelessWidget {
       create: (context) => HomeCubit(
           MoviesRepository(remoteDataSource: MoviesMockedDataSource()))
         ..getMovies(),
-      child: BlocBuilder<HomeCubit, HomeState>(
-        builder: (context, state) {
-          return Scaffold(
-            backgroundColor: const Color.fromARGB(231, 22, 21, 21),
-            appBar: appBar(),
-            body: ListView(
-              children: [
-                for (final movieModel in state
-                    .movieModel) //For each movie model in the mocked data source, it creates a movie card on the home page
-                  NewAndPopularCard(
-                    movieModel: movieModel,
-                  ),
-              ],
-            ),
-            bottomNavigationBar: const NavigationBarWidget(),
-          );
+      child: BlocListener<HomeCubit, HomeState>(
+        listener: (context, state) {
+          if (state.status == Status.error) {
+            final errorMessage = state.errorMessage ?? 'Unknown error';
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(errorMessage),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
         },
+        child: BlocBuilder<HomeCubit, HomeState>(
+          builder: (context, state) {
+            return Scaffold(
+              backgroundColor: const Color(0xE7161515),
+              appBar: appBar(),
+              body: ListView(
+                children: [
+                  for (final movieModel in state.movieModel)
+                    NewAndPopularCard(
+                      movieModel: movieModel,
+                    ),
+                ],
+              ),
+              bottomNavigationBar: const NavigationBarWidget(),
+            );
+          },
+        ),
       ),
     );
   }
