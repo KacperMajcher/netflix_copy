@@ -16,9 +16,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(),
+      create: (context) => HomeCubit()..getMovieModel(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
+          final movieModel = state.movieModel; //movieModel from cubit
           return Scaffold(
             body: Container(
               decoration: const BoxDecoration(
@@ -54,7 +55,7 @@ class HomePage extends StatelessWidget {
                                 height: 466,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(state.page),
+                                      image: AssetImage(movieModel!.page),
                                       fit: BoxFit.cover,
                                       alignment: Alignment.topCenter),
                                   color: Colors.grey,
