@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
 import 'package:netflix_copy/features/home/cubit/home_cubit.dart';
+import 'package:netflix_copy/features/home/repository/movies_repository.dart';
 import 'package:netflix_copy/shared_widgets/categories.dart';
 import 'package:netflix_copy/shared_widgets/categories/category.dart';
 import 'package:netflix_copy/shared_widgets/icons/cast_icon_button.dart';
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit()..getMovieModel(),
+      create: (context) => HomeCubit(MoviesRepository())..getMovies(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           final movieModel = state.movieModel; //movieModel from cubit
@@ -55,7 +56,7 @@ class HomePage extends StatelessWidget {
                                 height: 466,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(movieModel!.page),
+                                      image: AssetImage(movieModel?.page ?? ''),
                                       fit: BoxFit.cover,
                                       alignment: Alignment.topCenter),
                                   color: Colors.grey,
