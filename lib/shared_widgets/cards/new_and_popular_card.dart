@@ -50,9 +50,12 @@ class NewAndPopularCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(width: 10),
-                        ProductionTitle(
-                          title: movieModel.title,
-                          fontSize: 25,
+                        SizedBox(
+                          height: 37,
+                          child: ProductionTitle(
+                            title: movieModel.title,
+                            fontSize: 25,
+                          ),
                         ),
                         const SizedBox(height: 8),
                         Description(

@@ -12,13 +12,16 @@ class ProductionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: fontSize,
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-        letterSpacing: 1,
+    return FittedBox(
+      fit: BoxFit.fitWidth,
+      child: Text(
+        title,
+        style: TextStyle(
+          fontSize: fontSize,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 1,
+        ),
       ),
     );
   }
