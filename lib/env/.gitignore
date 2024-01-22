@@ -1,0 +1,4 @@
+# Hide key from version control
+env.dart
+env.g.dart
+.env
