@@ -1,23 +1,30 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'movie_model.g.dart';
+
+@JsonSerializable()
 class MovieModel {
   MovieModel({
-    required this.overview,
-    // required this.release,
-    required this.id,
     required this.cover,
     required this.title,
+    required this.release,
+    required this.overview,
+    required this.id,
   });
 
   final int id;
+  @JsonKey(name: 'backdrop_path')
   final String cover;
+  @JsonKey(name: 'original_title')
   final String title;
+  @JsonKey(name: 'release_date')
+  final String release;
+  @JsonKey(name: 'overview')
   final String overview;
-  // final DateTime release;
   final bool netflixSeries = false;
 
-  MovieModel.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        cover = json['backdrop_path'],
-        title = json['original_title'],
-        // release = json['release_date'],
-        overview = json['overview'];
+  factory MovieModel.fromJson(Map<String, dynamic> json) =>
+      _$MovieModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MovieModelToJson(this);
 }
