@@ -13,7 +13,7 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> getMovies() async {
     emit(const HomeState());
     try {
-      final movieModel = await _moviesRepository.getMoviesModels();
+      final movieModel = await _moviesRepository.getMoviesData();
 
       emit(
         HomeState(

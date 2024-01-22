@@ -15,7 +15,7 @@ class NewAndPopularPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit(
-          MoviesRepository(remoteDataSource: MoviesMockedDataSource()))
+          MoviesRepository(remoteDataSource: MoviesRemoteDioDataSource()))
         ..getMovies(),
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {

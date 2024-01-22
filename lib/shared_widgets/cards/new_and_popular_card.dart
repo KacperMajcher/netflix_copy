@@ -34,7 +34,7 @@ class NewAndPopularCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Player(
-                    page: movieModel.page,
+                    cover: movieModel.cover,
                     borderRadiusValue: 12,
                   ),
                   const SizedBox(height: 13),
@@ -58,10 +58,14 @@ class NewAndPopularCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 8),
-                        Description(
-                            description: movieModel.description,
-                            textColor: const Color.fromARGB(255, 165, 153, 153),
-                            fontSize: 14),
+                        SizedBox(
+                          height: 60,
+                          child: Overview(
+                              overview: movieModel.overview,
+                              textColor:
+                                  const Color.fromARGB(255, 165, 153, 153),
+                              fontSize: 14),
+                        ),
                         movieModel.netflixSeries
                             ? const SizedBox(height: 15)
                             : const SizedBox(height: 30),

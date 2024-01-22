@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit(
-          MoviesRepository(remoteDataSource: MoviesMockedDataSource()))
+          MoviesRepository(remoteDataSource: MoviesRemoteDioDataSource()))
         ..getMovies(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
