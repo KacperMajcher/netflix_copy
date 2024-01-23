@@ -28,7 +28,6 @@ mixin _$MovieModel {
   String get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'release_date')
   String get release => throw _privateConstructorUsedError;
-  @JsonKey(name: 'overview')
   String get overview => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +48,7 @@ abstract class $MovieModelCopyWith<$Res> {
       @JsonKey(name: 'backdrop_path') String cover,
       @JsonKey(name: 'original_title') String title,
       @JsonKey(name: 'release_date') String release,
-      @JsonKey(name: 'overview') String overview});
+      String overview});
 }
 
 /// @nodoc
@@ -115,7 +114,7 @@ abstract class _$$MovieModelImplCopyWith<$Res>
       @JsonKey(name: 'backdrop_path') String cover,
       @JsonKey(name: 'original_title') String title,
       @JsonKey(name: 'release_date') String release,
-      @JsonKey(name: 'overview') String overview});
+      String overview});
 }
 
 /// @nodoc
@@ -166,7 +165,8 @@ class __$$MovieModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$MovieModelImpl implements _MovieModel {
   const _$MovieModelImpl(
       {required this.id,
@@ -174,7 +174,7 @@ class _$MovieModelImpl implements _MovieModel {
       @JsonKey(name: 'backdrop_path') required this.cover,
       @JsonKey(name: 'original_title') required this.title,
       @JsonKey(name: 'release_date') required this.release,
-      @JsonKey(name: 'overview') required this.overview});
+      required this.overview});
 
   factory _$MovieModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieModelImplFromJson(json);
@@ -194,7 +194,6 @@ class _$MovieModelImpl implements _MovieModel {
   @JsonKey(name: 'release_date')
   final String release;
   @override
-  @JsonKey(name: 'overview')
   final String overview;
 
   @override
@@ -238,13 +237,12 @@ class _$MovieModelImpl implements _MovieModel {
 
 abstract class _MovieModel implements MovieModel {
   const factory _MovieModel(
-          {required final int id,
-          final bool netflixSeries,
-          @JsonKey(name: 'backdrop_path') required final String cover,
-          @JsonKey(name: 'original_title') required final String title,
-          @JsonKey(name: 'release_date') required final String release,
-          @JsonKey(name: 'overview') required final String overview}) =
-      _$MovieModelImpl;
+      {required final int id,
+      final bool netflixSeries,
+      @JsonKey(name: 'backdrop_path') required final String cover,
+      @JsonKey(name: 'original_title') required final String title,
+      @JsonKey(name: 'release_date') required final String release,
+      required final String overview}) = _$MovieModelImpl;
 
   factory _MovieModel.fromJson(Map<String, dynamic> json) =
       _$MovieModelImpl.fromJson;
@@ -263,7 +261,6 @@ abstract class _MovieModel implements MovieModel {
   @JsonKey(name: 'release_date')
   String get release;
   @override
-  @JsonKey(name: 'overview')
   String get overview;
   @override
   @JsonKey(ignore: true)
