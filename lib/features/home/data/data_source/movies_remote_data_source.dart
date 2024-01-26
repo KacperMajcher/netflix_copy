@@ -1,13 +1,26 @@
 import 'package:dio/dio.dart';
-import 'package:netflix_copy/core/config.dart';
+import 'package:netflix_copy/features/home/data/entities/api_dto.dart';
+import 'package:retrofit/retrofit.dart';
 
-class MoviesRemoteDioDataSource {
-  Future<Map<String, dynamic>?> getMoviesData() async {
-    try {
-      final response = await Dio().get<Map<String, dynamic>>(Config.url);
-      return response.data;
-    } on DioException catch (error) {
-      throw Exception(error.response?.data['error'] ?? 'Unknown error');
-    }
-  }
+part 'movies_remote_data_source.g.dart';
+
+@RestApi(baseUrl: 'baseurl')
+abstract class MoviesRemoteRetrofitDataSource {
+  factory MoviesRemoteRetrofitDataSource(Dio dio, {String baseUrl}) =
+      _MoviesRemoteRetrofitDataSource;
+
+  @GET('endpoint1')
+  Future<MovieResponseDto> getMoviesData();
+
+  @GET('endpoint2')
+  Future<MovieResponseDto> getMoviesDataPage2();
+
+  @GET('endpoint3')
+  Future<MovieResponseDto> getMoviesDataPage3();
+
+  @GET('endpoint4')
+  Future<MovieResponseDto> getMoviesDataPage4();
 }
+
+
+//to implement api hashes

@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit(
-          MoviesRepository(remoteDataSource: MoviesRemoteDioDataSource()))
+          MoviesRepository(remoteDataSource: MoviesRemoteRetrofitDataSource(Dio())))
         ..getMovies(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {

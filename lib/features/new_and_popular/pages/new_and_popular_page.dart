@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_copy/core/enums.dart';
@@ -15,7 +16,7 @@ class NewAndPopularPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit(
-          MoviesRepository(remoteDataSource: MoviesRemoteDioDataSource()))
+          MoviesRepository(remoteDataSource: MoviesRemoteRetrofitDataSource(Dio())))
         ..getMovies(),
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
