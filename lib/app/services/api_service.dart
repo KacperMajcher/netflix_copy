@@ -5,9 +5,9 @@ import 'dart:convert';
 
 class ApiService {
   static Future<List<MovieModel>> fetchMovies() async {
-    final response = await http.get(Uri.parse(
-      '${ApiConfig.baseUrl}/movie/popular?api_key=${ApiConfig.apiKey}',
-    ));
+    final response = await http.get(
+      Uri.parse(ApiConfig.apiUrl),
+    );
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       final List<dynamic> results = data['results'];
