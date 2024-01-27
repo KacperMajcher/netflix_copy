@@ -1,4 +1,4 @@
-import 'package:netflix_copy/env/env.dart';
+import 'package:netflix_copy/app/services/api_keys.dart';
 
 enum Flavor {
   development,
@@ -8,41 +8,41 @@ enum Flavor {
 class Config {
   static Flavor appFlavor = Flavor.development;
 
-  static String url = '${Config.baseUrl}${Config.urlSettings}${Config.apiKey}';
+  static String url = '${Config.baseUrl}${Config.endpoint}${Config.apiKey}';
 
   static String get baseUrl {
     switch (appFlavor) {
       case Flavor.development:
-        return Env.LINK;
+        return ApiConfig.baseUrl;
       case Flavor.production:
-        return Env.LINK;
+        return ApiConfig.baseUrl;
     }
   }
 
-  static String get urlSettings {
+  static String get endpoint {
     switch (appFlavor) {
       case Flavor.development:
-        return Env.SET;
+        return ApiConfig.endpointPage1;
       case Flavor.production:
-        return Env.SET;
+        return ApiConfig.endpointPage2;
     }
   }
 
   static String get apiKey {
     switch (appFlavor) {
       case Flavor.development:
-        return Env.KEY1;
+        return ApiConfig.apiKey;
       case Flavor.production:
-        return Env.KEY1;
+        return ApiConfig.apiKey;
     }
   }
 
   static String get imageReader {
     switch (appFlavor) {
       case Flavor.development:
-        return Env.LINK2;
+        return ApiConfig.imageBaseUrl;
       case Flavor.production:
-        return Env.LINK2;
+        return ApiConfig.imageBaseUrl;
     }
   }
 
