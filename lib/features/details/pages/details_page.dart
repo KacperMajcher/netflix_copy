@@ -21,7 +21,7 @@ class _DetailsPageState extends State<DetailsPage> {
       body: ListView(
         children: const [
           Player(
-            page: 'assets/pages/lucyfer_page.jpg',
+            cover: 'assets/pages/lucyfer_page.jpg',
             borderRadiusValue: 12,
           ),
           DetailsPageContent(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_copy/core/config.dart';
 import 'package:netflix_copy/features/start/pages/start_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,9 +7,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: StartPage(),
-      debugShowCheckedModeBanner: false,
+    return MaterialApp(
+      home: const StartPage(),
+      debugShowCheckedModeBanner: Config.debugShowCheckedModeBanner,
     );
   }
 }

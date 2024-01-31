@@ -1,9 +1,9 @@
 part of 'home_cubit.dart';
 
-class HomeState {
-  const HomeState({
-    this.movieModel = const [],
-  });
-
-  final List<MovieModel> movieModel;
+@freezed
+class HomeState with _$HomeState {
+  factory HomeState(
+      {@Default([]) List<MovieModel> movieModel,
+      @Default(Status.initial) Status status,
+      String? errorMessage}) = _HomeState;
 }

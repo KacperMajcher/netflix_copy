@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_copy/core/config.dart';
 
 class Player extends StatelessWidget {
-  const Player(
-      {super.key, required this.page, required this.borderRadiusValue});
+  const Player({
+    super.key,
+    required this.cover,
+    required this.borderRadiusValue,
+  });
 
-  final String page;
+  final String cover;
   final double borderRadiusValue;
 
   @override
@@ -17,7 +21,7 @@ class Player extends StatelessWidget {
           topRight: Radius.circular(borderRadiusValue),
         ),
         image: DecorationImage(
-          image: AssetImage(page),
+          image: NetworkImage('${Config.imageReader}$cover'),
           fit: BoxFit.fill,
         ),
       ),

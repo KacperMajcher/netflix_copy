@@ -58,8 +58,8 @@ class _DetailsPageContentState extends State<DetailsPageContent> {
                 const SizedBox(height: 4),
                 const EpisodeTitle(),
                 const SizedBox(height: 5),
-                const Description(
-                  description:
+                const Overview(
+                  overview:
                       'The bored devil abandons the role of the ruler of hell and moves to Los Angeles, where he opens a nightclub and begins accompanying the lady detective from the homicide department.',
                   textColor: Colors.white,
                   fontSize: 12,
