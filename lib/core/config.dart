@@ -8,32 +8,12 @@ enum Flavor {
 class Config {
   static Flavor appFlavor = Flavor.development;
 
-  static String url = '${Config.baseUrl}${Config.endpoint}${Config.apiKey}';
-
   static String get baseUrl {
     switch (appFlavor) {
       case Flavor.development:
         return ApiConfig.baseUrl;
       case Flavor.production:
         return ApiConfig.baseUrl;
-    }
-  }
-
-  static String get endpoint {
-    switch (appFlavor) {
-      case Flavor.development:
-        return ApiConfig.endpointPage1;
-      case Flavor.production:
-        return ApiConfig.endpointPage2;
-    }
-  }
-
-  static String get apiKey {
-    switch (appFlavor) {
-      case Flavor.development:
-        return ApiConfig.apiKey;
-      case Flavor.production:
-        return ApiConfig.apiKey;
     }
   }
 
