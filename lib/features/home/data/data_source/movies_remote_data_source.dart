@@ -10,12 +10,10 @@ abstract class MoviesRemoteRetrofitDataSource {
   factory MoviesRemoteRetrofitDataSource(Dio dio, {String baseUrl}) =
       _MoviesRemoteRetrofitDataSource;
 
-  @GET(ApiConfig.endpointPage1)
-  Future<MovieResponseDto> getMoviesData();
-
-  @GET(ApiConfig.endpointPage2)
-  Future<MovieResponseDto> getMoviesDataPage2();
-
-  @GET(ApiConfig.endpointPage3)
-  Future<MovieResponseDto> getMoviesDataPage3();
+  @GET(
+      '/movie?include_adult=false&include_video=false&language=en-US&page={page}&sort_by=popularity.desc&api_key={apiKey}')
+  Future<MovieResponseDto> getMoviesData(
+    @Path('page') String page,
+    @Path('apiKey') String apiKey,
+  );
 }
