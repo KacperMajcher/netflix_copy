@@ -31,6 +31,12 @@ class MyNetflixPageContent extends StatelessWidget {
               child: Text('Error: ${state.errorMessage}'),
             );
           } else {
+            List<String> releaseMonths = state.myList.map((movie) {
+              DateTime releaseDate = DateTime.parse(movie.release);
+              String month = DateFormat.M().format(releaseDate);
+              return month;
+            }).toList();
+
             return ListView(
               children: [
                 const SizedBox(height: 9),
@@ -52,7 +58,12 @@ class MyNetflixPageContent extends StatelessWidget {
                 const DownloadedRow(),
                 const SizedBox(height: 3),
                 DownloadedEpisodesList(
+                  counter: releaseMonths
+                      .toList(), 
                   covers: state.myList.map((movie) => movie.cover).toList(),
+                  titles: state.myList
+                      .map((movie) => movie.title)
+                      .toList(), 
                 ),
                 const SizedBox(height: 20),
                 CategoryShare(

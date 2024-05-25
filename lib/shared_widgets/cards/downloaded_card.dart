@@ -4,11 +4,14 @@ import 'package:netflix_copy/features/details/pages/details_page.dart';
 class DownloadedCard extends StatelessWidget {
   const DownloadedCard({
     super.key,
+    required this.episodesCount,
     required this.cover,
+    required this.title,
   });
 
+  final String episodesCount;
   final String cover;
-  final int episodesCount = 4;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +49,11 @@ class DownloadedCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4),
                             color: Colors.black.withOpacity(0.5),
                           ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(4.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
                             child: Text(
-                              'title',
-                              style: TextStyle(
+                              title,
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
@@ -78,9 +81,8 @@ class DownloadedCard extends StatelessWidget {
                 child: Center(
                   child: Builder(
                     builder: (context) {
-                      final suffix = episodesCount.toString() == '1'
-                          ? 'episode'
-                          : 'episodes';
+                      final suffix =
+                          episodesCount == '1' ? 'episode' : 'episodes';
                       return Text(
                         '$episodesCount $suffix',
                         style: const TextStyle(color: Colors.white),
