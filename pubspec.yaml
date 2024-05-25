@@ -1,6 +1,4 @@
 name: netflix_copy
-description: A new Flutter project.
-publish_to: 'none' 
 version: 1.0.0+1
 
 environment:
@@ -20,6 +18,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   retrofit: ^4.0.3
   http: ^1.2.0
+  get_it: ^7.7.0
 
 dev_dependencies:
   flutter_test:

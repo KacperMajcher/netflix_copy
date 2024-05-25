@@ -1,10 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_copy/app/injection_container.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
 import 'package:netflix_copy/features/home/cubit/home_cubit.dart';
-import 'package:netflix_copy/features/home/data/data_source/movies_remote_data_source.dart';
-import 'package:netflix_copy/features/home/data/repository/movies_repository.dart';
 import 'package:netflix_copy/shared_widgets/categories.dart';
 import 'package:netflix_copy/shared_widgets/categories/category.dart';
 import 'package:netflix_copy/shared_widgets/icons/cast_icon_button.dart';
@@ -19,9 +17,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(
-          MoviesRepository(remoteDataSource: MoviesRemoteRetrofitDataSource(Dio())))
-        ..getMovies(),
+      create: (context) => getIt<HomeCubit>()..getMovies(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return Scaffold(
@@ -119,7 +115,7 @@ class HomePage extends StatelessWidget {
           );
         },
       ),
-    );
+    );//TODO: Implement api service
   }
 
   AppBar appBar() {
