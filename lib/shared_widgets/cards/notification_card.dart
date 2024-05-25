@@ -3,17 +3,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_copy/features/details/pages/details_page.dart';
 
 class NotificationCard extends StatelessWidget {
-  const NotificationCard(
-      {super.key,
-      required this.header,
-      required this.notificationNumber,
-      required this.title,
-      required this.date});
+  const NotificationCard({
+    super.key,
+    required this.notificationTitle,
+    required this.content,
+    required this.date,
+    required this.cover,
+  });
 
-  final String header;
-  final String notificationNumber;
-  final String title;
+  final String notificationTitle;
+  final String content;
   final String date;
+  final String cover;
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +35,17 @@ class NotificationCard extends StatelessWidget {
                   children: [
                     const Icon(Icons.circle, color: Colors.red, size: 10),
                     const SizedBox(width: 6),
-                    Container(
-                      height: 75,
-                      width: 130,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(4)),
-                          color: Color(0xFF434141)),
-                      child: Center(
-                        child: Text(
-                          header,
-                          style: const TextStyle(color: Color(0xFF736D6D)),
+                    ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(8),
+                      ),
+                      child: Container(
+                        height: 75,
+                        width: 130,
+                        color: const Color(0xFF434141),
+                        child: Image.asset(
+                          cover,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -53,14 +55,15 @@ class NotificationCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            notificationNumber,
+                            notificationTitle,
                             style: GoogleFonts.openSans(
                                 fontSize: 13,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700),
+                            overflow: TextOverflow.ellipsis,
                           ),
                           Text(
-                            title,
+                            content,
                             style: GoogleFonts.openSans(
                               fontSize: 13,
                               color: Colors.white,

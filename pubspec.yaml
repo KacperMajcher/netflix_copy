@@ -19,6 +19,7 @@ dependencies:
   retrofit: ^4.0.3
   http: ^1.2.0
   get_it: ^7.7.0
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -42,3 +43,4 @@ flutter:
   - assets/covers/
   - assets/pages/
   - assets/avatars/
+  - assets/notifications/
