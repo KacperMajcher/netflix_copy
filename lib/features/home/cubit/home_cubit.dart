@@ -19,6 +19,9 @@ class HomeCubit extends Cubit<HomeState> {
       final europeanSeries = await _moviesRepository.getMoviesData(2);
       final popularNow = await _moviesRepository.getMoviesData(3);
       final netflixExclusives = await _moviesRepository.getMoviesData(4);
+      final continueWatching = await _moviesRepository.getMoviesData(5);
+      final recentlyWatched = await _moviesRepository.getMoviesData(6);
+      final likedMovies = await _moviesRepository.getMoviesData(7);
 
       emit(
         state.copyWith(
@@ -26,6 +29,9 @@ class HomeCubit extends Cubit<HomeState> {
           europeanSeries: europeanSeries,
           popularNow: popularNow,
           netflixExclusives: netflixExclusives,
+          continueWatching: continueWatching,
+          recentlyWatched: recentlyWatched,
+          likedMovies: likedMovies,
           status: Status.success,
         ),
       );
@@ -39,4 +45,3 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 }
-

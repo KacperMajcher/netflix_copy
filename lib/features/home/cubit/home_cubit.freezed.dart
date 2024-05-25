@@ -20,6 +20,9 @@ mixin _$HomeState {
   List<MovieModel> get europeanSeries => throw _privateConstructorUsedError;
   List<MovieModel> get popularNow => throw _privateConstructorUsedError;
   List<MovieModel> get netflixExclusives => throw _privateConstructorUsedError;
+  List<MovieModel> get continueWatching => throw _privateConstructorUsedError;
+  List<MovieModel> get recentlyWatched => throw _privateConstructorUsedError;
+  List<MovieModel> get likedMovies => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
@@ -38,6 +41,9 @@ abstract class $HomeStateCopyWith<$Res> {
       List<MovieModel> europeanSeries,
       List<MovieModel> popularNow,
       List<MovieModel> netflixExclusives,
+      List<MovieModel> continueWatching,
+      List<MovieModel> recentlyWatched,
+      List<MovieModel> likedMovies,
       Status status,
       String? errorMessage});
 }
@@ -59,6 +65,9 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? europeanSeries = null,
     Object? popularNow = null,
     Object? netflixExclusives = null,
+    Object? continueWatching = null,
+    Object? recentlyWatched = null,
+    Object? likedMovies = null,
     Object? status = null,
     Object? errorMessage = freezed,
   }) {
@@ -78,6 +87,18 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       netflixExclusives: null == netflixExclusives
           ? _value.netflixExclusives
           : netflixExclusives // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      continueWatching: null == continueWatching
+          ? _value.continueWatching
+          : continueWatching // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      recentlyWatched: null == recentlyWatched
+          ? _value.recentlyWatched
+          : recentlyWatched // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      likedMovies: null == likedMovies
+          ? _value.likedMovies
+          : likedMovies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       status: null == status
           ? _value.status
@@ -104,6 +125,9 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       List<MovieModel> europeanSeries,
       List<MovieModel> popularNow,
       List<MovieModel> netflixExclusives,
+      List<MovieModel> continueWatching,
+      List<MovieModel> recentlyWatched,
+      List<MovieModel> likedMovies,
       Status status,
       String? errorMessage});
 }
@@ -123,6 +147,9 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? europeanSeries = null,
     Object? popularNow = null,
     Object? netflixExclusives = null,
+    Object? continueWatching = null,
+    Object? recentlyWatched = null,
+    Object? likedMovies = null,
     Object? status = null,
     Object? errorMessage = freezed,
   }) {
@@ -142,6 +169,18 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       netflixExclusives: null == netflixExclusives
           ? _value._netflixExclusives
           : netflixExclusives // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      continueWatching: null == continueWatching
+          ? _value._continueWatching
+          : continueWatching // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      recentlyWatched: null == recentlyWatched
+          ? _value._recentlyWatched
+          : recentlyWatched // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      likedMovies: null == likedMovies
+          ? _value._likedMovies
+          : likedMovies // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       status: null == status
           ? _value.status
@@ -163,12 +202,18 @@ class _$HomeStateImpl implements _HomeState {
       final List<MovieModel> europeanSeries = const [],
       final List<MovieModel> popularNow = const [],
       final List<MovieModel> netflixExclusives = const [],
+      final List<MovieModel> continueWatching = const [],
+      final List<MovieModel> recentlyWatched = const [],
+      final List<MovieModel> likedMovies = const [],
       this.status = Status.initial,
       this.errorMessage})
       : _myList = myList,
         _europeanSeries = europeanSeries,
         _popularNow = popularNow,
-        _netflixExclusives = netflixExclusives;
+        _netflixExclusives = netflixExclusives,
+        _continueWatching = continueWatching,
+        _recentlyWatched = recentlyWatched,
+        _likedMovies = likedMovies;
 
   final List<MovieModel> _myList;
   @override
@@ -207,6 +252,34 @@ class _$HomeStateImpl implements _HomeState {
     return EqualUnmodifiableListView(_netflixExclusives);
   }
 
+  final List<MovieModel> _continueWatching;
+  @override
+  @JsonKey()
+  List<MovieModel> get continueWatching {
+    if (_continueWatching is EqualUnmodifiableListView)
+      return _continueWatching;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_continueWatching);
+  }
+
+  final List<MovieModel> _recentlyWatched;
+  @override
+  @JsonKey()
+  List<MovieModel> get recentlyWatched {
+    if (_recentlyWatched is EqualUnmodifiableListView) return _recentlyWatched;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_recentlyWatched);
+  }
+
+  final List<MovieModel> _likedMovies;
+  @override
+  @JsonKey()
+  List<MovieModel> get likedMovies {
+    if (_likedMovies is EqualUnmodifiableListView) return _likedMovies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_likedMovies);
+  }
+
   @override
   @JsonKey()
   final Status status;
@@ -215,7 +288,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(myList: $myList, europeanSeries: $europeanSeries, popularNow: $popularNow, netflixExclusives: $netflixExclusives, status: $status, errorMessage: $errorMessage)';
+    return 'HomeState(myList: $myList, europeanSeries: $europeanSeries, popularNow: $popularNow, netflixExclusives: $netflixExclusives, continueWatching: $continueWatching, recentlyWatched: $recentlyWatched, likedMovies: $likedMovies, status: $status, errorMessage: $errorMessage)';
   }
 
   @override
@@ -230,6 +303,12 @@ class _$HomeStateImpl implements _HomeState {
                 .equals(other._popularNow, _popularNow) &&
             const DeepCollectionEquality()
                 .equals(other._netflixExclusives, _netflixExclusives) &&
+            const DeepCollectionEquality()
+                .equals(other._continueWatching, _continueWatching) &&
+            const DeepCollectionEquality()
+                .equals(other._recentlyWatched, _recentlyWatched) &&
+            const DeepCollectionEquality()
+                .equals(other._likedMovies, _likedMovies) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
@@ -242,6 +321,9 @@ class _$HomeStateImpl implements _HomeState {
       const DeepCollectionEquality().hash(_europeanSeries),
       const DeepCollectionEquality().hash(_popularNow),
       const DeepCollectionEquality().hash(_netflixExclusives),
+      const DeepCollectionEquality().hash(_continueWatching),
+      const DeepCollectionEquality().hash(_recentlyWatched),
+      const DeepCollectionEquality().hash(_likedMovies),
       status,
       errorMessage);
 
@@ -258,6 +340,9 @@ abstract class _HomeState implements HomeState {
       final List<MovieModel> europeanSeries,
       final List<MovieModel> popularNow,
       final List<MovieModel> netflixExclusives,
+      final List<MovieModel> continueWatching,
+      final List<MovieModel> recentlyWatched,
+      final List<MovieModel> likedMovies,
       final Status status,
       final String? errorMessage}) = _$HomeStateImpl;
 
@@ -269,6 +354,12 @@ abstract class _HomeState implements HomeState {
   List<MovieModel> get popularNow;
   @override
   List<MovieModel> get netflixExclusives;
+  @override
+  List<MovieModel> get continueWatching;
+  @override
+  List<MovieModel> get recentlyWatched;
+  @override
+  List<MovieModel> get likedMovies;
   @override
   Status get status;
   @override

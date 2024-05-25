@@ -7,6 +7,9 @@ class HomeState with _$HomeState {
     @Default([]) List<MovieModel> europeanSeries,
     @Default([]) List<MovieModel> popularNow,
     @Default([]) List<MovieModel> netflixExclusives,
+    @Default([]) List<MovieModel> continueWatching,
+    @Default([]) List<MovieModel> recentlyWatched,
+    @Default([]) List<MovieModel> likedMovies,
     @Default(Status.initial) Status status,
     String? errorMessage,
   }) = _HomeState;
