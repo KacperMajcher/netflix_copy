@@ -35,7 +35,7 @@ class NewAndPopularPage extends StatelessWidget {
             appBar: const NewAndPopularAppBar(),
             body: ListView(
               children: [
-                for (final movieModel in state.movieModel)
+                for (final movieModel in state.popularNow)
                   NewAndPopularCard(
                     movieModel: movieModel,
                   ),

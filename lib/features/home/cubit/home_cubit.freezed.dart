@@ -16,7 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeState {
-  List<MovieModel> get movieModel => throw _privateConstructorUsedError;
+  List<MovieModel> get myList => throw _privateConstructorUsedError;
+  List<MovieModel> get europeanSeries => throw _privateConstructorUsedError;
+  List<MovieModel> get popularNow => throw _privateConstructorUsedError;
+  List<MovieModel> get netflixExclusives => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
@@ -30,7 +33,13 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({List<MovieModel> movieModel, Status status, String? errorMessage});
+  $Res call(
+      {List<MovieModel> myList,
+      List<MovieModel> europeanSeries,
+      List<MovieModel> popularNow,
+      List<MovieModel> netflixExclusives,
+      Status status,
+      String? errorMessage});
 }
 
 /// @nodoc
@@ -46,14 +55,29 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? movieModel = null,
+    Object? myList = null,
+    Object? europeanSeries = null,
+    Object? popularNow = null,
+    Object? netflixExclusives = null,
     Object? status = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
-      movieModel: null == movieModel
-          ? _value.movieModel
-          : movieModel // ignore: cast_nullable_to_non_nullable
+      myList: null == myList
+          ? _value.myList
+          : myList // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      europeanSeries: null == europeanSeries
+          ? _value.europeanSeries
+          : europeanSeries // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      popularNow: null == popularNow
+          ? _value.popularNow
+          : popularNow // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      netflixExclusives: null == netflixExclusives
+          ? _value.netflixExclusives
+          : netflixExclusives // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       status: null == status
           ? _value.status
@@ -75,7 +99,13 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<MovieModel> movieModel, Status status, String? errorMessage});
+  $Res call(
+      {List<MovieModel> myList,
+      List<MovieModel> europeanSeries,
+      List<MovieModel> popularNow,
+      List<MovieModel> netflixExclusives,
+      Status status,
+      String? errorMessage});
 }
 
 /// @nodoc
@@ -89,14 +119,29 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? movieModel = null,
+    Object? myList = null,
+    Object? europeanSeries = null,
+    Object? popularNow = null,
+    Object? netflixExclusives = null,
     Object? status = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$HomeStateImpl(
-      movieModel: null == movieModel
-          ? _value._movieModel
-          : movieModel // ignore: cast_nullable_to_non_nullable
+      myList: null == myList
+          ? _value._myList
+          : myList // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      europeanSeries: null == europeanSeries
+          ? _value._europeanSeries
+          : europeanSeries // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      popularNow: null == popularNow
+          ? _value._popularNow
+          : popularNow // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+      netflixExclusives: null == netflixExclusives
+          ? _value._netflixExclusives
+          : netflixExclusives // ignore: cast_nullable_to_non_nullable
               as List<MovieModel>,
       status: null == status
           ? _value.status
@@ -114,18 +159,52 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl implements _HomeState {
   _$HomeStateImpl(
-      {final List<MovieModel> movieModel = const [],
+      {final List<MovieModel> myList = const [],
+      final List<MovieModel> europeanSeries = const [],
+      final List<MovieModel> popularNow = const [],
+      final List<MovieModel> netflixExclusives = const [],
       this.status = Status.initial,
       this.errorMessage})
-      : _movieModel = movieModel;
+      : _myList = myList,
+        _europeanSeries = europeanSeries,
+        _popularNow = popularNow,
+        _netflixExclusives = netflixExclusives;
 
-  final List<MovieModel> _movieModel;
+  final List<MovieModel> _myList;
   @override
   @JsonKey()
-  List<MovieModel> get movieModel {
-    if (_movieModel is EqualUnmodifiableListView) return _movieModel;
+  List<MovieModel> get myList {
+    if (_myList is EqualUnmodifiableListView) return _myList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_movieModel);
+    return EqualUnmodifiableListView(_myList);
+  }
+
+  final List<MovieModel> _europeanSeries;
+  @override
+  @JsonKey()
+  List<MovieModel> get europeanSeries {
+    if (_europeanSeries is EqualUnmodifiableListView) return _europeanSeries;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_europeanSeries);
+  }
+
+  final List<MovieModel> _popularNow;
+  @override
+  @JsonKey()
+  List<MovieModel> get popularNow {
+    if (_popularNow is EqualUnmodifiableListView) return _popularNow;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_popularNow);
+  }
+
+  final List<MovieModel> _netflixExclusives;
+  @override
+  @JsonKey()
+  List<MovieModel> get netflixExclusives {
+    if (_netflixExclusives is EqualUnmodifiableListView)
+      return _netflixExclusives;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_netflixExclusives);
   }
 
   @override
@@ -136,7 +215,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(movieModel: $movieModel, status: $status, errorMessage: $errorMessage)';
+    return 'HomeState(myList: $myList, europeanSeries: $europeanSeries, popularNow: $popularNow, netflixExclusives: $netflixExclusives, status: $status, errorMessage: $errorMessage)';
   }
 
   @override
@@ -144,16 +223,27 @@ class _$HomeStateImpl implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
+            const DeepCollectionEquality().equals(other._myList, _myList) &&
             const DeepCollectionEquality()
-                .equals(other._movieModel, _movieModel) &&
+                .equals(other._europeanSeries, _europeanSeries) &&
+            const DeepCollectionEquality()
+                .equals(other._popularNow, _popularNow) &&
+            const DeepCollectionEquality()
+                .equals(other._netflixExclusives, _netflixExclusives) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_movieModel), status, errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_myList),
+      const DeepCollectionEquality().hash(_europeanSeries),
+      const DeepCollectionEquality().hash(_popularNow),
+      const DeepCollectionEquality().hash(_netflixExclusives),
+      status,
+      errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -164,12 +254,21 @@ class _$HomeStateImpl implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   factory _HomeState(
-      {final List<MovieModel> movieModel,
+      {final List<MovieModel> myList,
+      final List<MovieModel> europeanSeries,
+      final List<MovieModel> popularNow,
+      final List<MovieModel> netflixExclusives,
       final Status status,
       final String? errorMessage}) = _$HomeStateImpl;
 
   @override
-  List<MovieModel> get movieModel;
+  List<MovieModel> get myList;
+  @override
+  List<MovieModel> get europeanSeries;
+  @override
+  List<MovieModel> get popularNow;
+  @override
+  List<MovieModel> get netflixExclusives;
   @override
   Status get status;
   @override

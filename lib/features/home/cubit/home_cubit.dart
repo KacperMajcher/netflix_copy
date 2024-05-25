@@ -15,11 +15,17 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> getMovies() async {
     emit(state.copyWith(status: Status.loading));
     try {
-      final movieModel = await _moviesRepository.getMoviesData(2);
+      final myList = await _moviesRepository.getMoviesData(1);
+      final europeanSeries = await _moviesRepository.getMoviesData(2);
+      final popularNow = await _moviesRepository.getMoviesData(3);
+      final netflixExclusives = await _moviesRepository.getMoviesData(4);
 
       emit(
         state.copyWith(
-          movieModel: movieModel,
+          myList: myList,
+          europeanSeries: europeanSeries,
+          popularNow: popularNow,
+          netflixExclusives: netflixExclusives,
           status: Status.success,
         ),
       );
@@ -33,3 +39,4 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 }
+

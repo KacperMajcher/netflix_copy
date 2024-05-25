@@ -22,6 +22,7 @@ class MoviesRepository {
         return MovieModel(
           id: movieDto.id,
           cover: '${ApiConfig.imageBaseUrl}${movieDto.backdropPath}',
+          poster: '${ApiConfig.imageBaseUrl}${movieDto.posterPath}',
           title: movieDto.originalTitle,
           release: movieDto.releaseDate,
           overview: movieDto.overview,

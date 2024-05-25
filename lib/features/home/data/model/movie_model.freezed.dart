@@ -24,6 +24,8 @@ mixin _$MovieModel {
   bool get netflixSeries => throw _privateConstructorUsedError;
   @JsonKey(name: 'backdrop_path')
   String get cover => throw _privateConstructorUsedError;
+  @JsonKey(name: 'poster_path')
+  String get poster => throw _privateConstructorUsedError;
   @JsonKey(name: 'original_title')
   String get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'release_date')
@@ -46,6 +48,7 @@ abstract class $MovieModelCopyWith<$Res> {
       {int id,
       bool netflixSeries,
       @JsonKey(name: 'backdrop_path') String cover,
+      @JsonKey(name: 'poster_path') String poster,
       @JsonKey(name: 'original_title') String title,
       @JsonKey(name: 'release_date') String release,
       String overview});
@@ -67,6 +70,7 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
     Object? id = null,
     Object? netflixSeries = null,
     Object? cover = null,
+    Object? poster = null,
     Object? title = null,
     Object? release = null,
     Object? overview = null,
@@ -83,6 +87,10 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
       cover: null == cover
           ? _value.cover
           : cover // ignore: cast_nullable_to_non_nullable
+              as String,
+      poster: null == poster
+          ? _value.poster
+          : poster // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -112,6 +120,7 @@ abstract class _$$MovieModelImplCopyWith<$Res>
       {int id,
       bool netflixSeries,
       @JsonKey(name: 'backdrop_path') String cover,
+      @JsonKey(name: 'poster_path') String poster,
       @JsonKey(name: 'original_title') String title,
       @JsonKey(name: 'release_date') String release,
       String overview});
@@ -131,6 +140,7 @@ class __$$MovieModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? netflixSeries = null,
     Object? cover = null,
+    Object? poster = null,
     Object? title = null,
     Object? release = null,
     Object? overview = null,
@@ -147,6 +157,10 @@ class __$$MovieModelImplCopyWithImpl<$Res>
       cover: null == cover
           ? _value.cover
           : cover // ignore: cast_nullable_to_non_nullable
+              as String,
+      poster: null == poster
+          ? _value.poster
+          : poster // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -172,6 +186,7 @@ class _$MovieModelImpl implements _MovieModel {
       {required this.id,
       this.netflixSeries = false,
       @JsonKey(name: 'backdrop_path') required this.cover,
+      @JsonKey(name: 'poster_path') required this.poster,
       @JsonKey(name: 'original_title') required this.title,
       @JsonKey(name: 'release_date') required this.release,
       required this.overview});
@@ -188,6 +203,9 @@ class _$MovieModelImpl implements _MovieModel {
   @JsonKey(name: 'backdrop_path')
   final String cover;
   @override
+  @JsonKey(name: 'poster_path')
+  final String poster;
+  @override
   @JsonKey(name: 'original_title')
   final String title;
   @override
@@ -198,7 +216,7 @@ class _$MovieModelImpl implements _MovieModel {
 
   @override
   String toString() {
-    return 'MovieModel(id: $id, netflixSeries: $netflixSeries, cover: $cover, title: $title, release: $release, overview: $overview)';
+    return 'MovieModel(id: $id, netflixSeries: $netflixSeries, cover: $cover, poster: $poster, title: $title, release: $release, overview: $overview)';
   }
 
   @override
@@ -210,6 +228,7 @@ class _$MovieModelImpl implements _MovieModel {
             (identical(other.netflixSeries, netflixSeries) ||
                 other.netflixSeries == netflixSeries) &&
             (identical(other.cover, cover) || other.cover == cover) &&
+            (identical(other.poster, poster) || other.poster == poster) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.release, release) || other.release == release) &&
             (identical(other.overview, overview) ||
@@ -219,7 +238,7 @@ class _$MovieModelImpl implements _MovieModel {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, netflixSeries, cover, title, release, overview);
+      runtimeType, id, netflixSeries, cover, poster, title, release, overview);
 
   @JsonKey(ignore: true)
   @override
@@ -240,6 +259,7 @@ abstract class _MovieModel implements MovieModel {
       {required final int id,
       final bool netflixSeries,
       @JsonKey(name: 'backdrop_path') required final String cover,
+      @JsonKey(name: 'poster_path') required final String poster,
       @JsonKey(name: 'original_title') required final String title,
       @JsonKey(name: 'release_date') required final String release,
       required final String overview}) = _$MovieModelImpl;
@@ -254,6 +274,9 @@ abstract class _MovieModel implements MovieModel {
   @override
   @JsonKey(name: 'backdrop_path')
   String get cover;
+  @override
+  @JsonKey(name: 'poster_path')
+  String get poster;
   @override
   @JsonKey(name: 'original_title')
   String get title;

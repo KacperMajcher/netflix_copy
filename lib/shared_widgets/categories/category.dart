@@ -1,54 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_copy/features/my_list/pages/my_list_page.dart';
-import 'package:netflix_copy/shared_widgets/categories/styles/category_name_style.dart';
 
-class Category extends StatefulWidget {
-  const Category(
-      {super.key,
-      required this.title,
-      required this.category,
-      required this.showViewAll});
+class Category extends StatelessWidget {
+  const Category({
+    super.key,
+    required this.title,
+    required this.covers,
+    this.showViewAll = false,
+  });
 
   final String title;
-  final Widget category;
+  final List<String> covers;
   final bool showViewAll;
 
   @override
-  State<Category> createState() => _CategoryState();
-}
-
-class _CategoryState extends State<Category> {
-  @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                widget.title,
-                style: categoryNameStyle(),
-                overflow: TextOverflow.clip,
-              ),
-            ),
-            if (widget.showViewAll)
-              InkWell(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const MyList()));
-                },
-                child: const Text(
-                  'View all',
-                  style: TextStyle(color: Colors.white),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
-            const SizedBox(width: 20),
-          ],
+              if (showViewAll)
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('View All'),
+                ),
+            ],
+          ),
         ),
-        widget.category,
+        SizedBox(
+          height: 150,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: covers.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Image.network(
+                  covers[index],
+                  fit: BoxFit.cover,
+                ),
+              );
+            },
+          ),
+        ),
       ],
     );
   }

@@ -10,6 +10,7 @@ class MovieModel with _$MovieModel {
     required int id,
     @Default(false) bool netflixSeries,
     @JsonKey(name: 'backdrop_path') required String cover,
+    @JsonKey(name: 'poster_path') required String poster,
     @JsonKey(name: 'original_title') required String title,
     @JsonKey(name: 'release_date') required String release,
     required String overview,
