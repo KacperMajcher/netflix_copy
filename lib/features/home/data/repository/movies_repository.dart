@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:netflix_copy/app/services/api_keys.dart';
 import 'package:netflix_copy/features/home/data/data_source/movies_remote_data_source.dart';
 import 'package:netflix_copy/features/home/data/entities/api_dto.dart';
@@ -9,21 +10,28 @@ class MoviesRepository {
   final MoviesRemoteRetrofitDataSource remoteDataSource;
 
   Future<List<MovieModel>> getMoviesData(int page) async {
-    final MovieResponseDto response = await remoteDataSource.getMoviesData(
-      page.toString(),
-      ApiConfig.apiKey,
-    );
+    try {
+      const String apiKey = ApiConfig.apiKey;
 
-    final List<MovieModel> movies = response.results.map((movieDto) {
-      return MovieModel(
-        id: movieDto.id,
-        cover: movieDto.backdropPath,
-        title: movieDto.originalTitle,
-        release: movieDto.releaseDate,
-        overview: movieDto.overview,
+      final MovieResponseDto response = await remoteDataSource.getMoviesData(
+        apiKey,
+        page.toString(),
       );
-    }).toList();
 
-    return movies;
+      final List<MovieModel> movies = response.results.map((movieDto) {
+        return MovieModel(
+          id: movieDto.id,
+          cover: '${ApiConfig.imageBaseUrl}${movieDto.backdropPath}',
+          title: movieDto.originalTitle,
+          release: movieDto.releaseDate,
+          overview: movieDto.overview,
+        );
+      }).toList();
+
+      return movies;
+    } catch (e) {
+      log('Error: $e');
+      rethrow;
+    }
   }
 }
