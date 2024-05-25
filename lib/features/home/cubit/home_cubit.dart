@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:netflix_copy/core/enums.dart';
@@ -19,9 +20,15 @@ class HomeCubit extends Cubit<HomeState> {
       final europeanSeries = await _moviesRepository.getMoviesData(2);
       final popularNow = await _moviesRepository.getMoviesData(3);
       final netflixExclusives = await _moviesRepository.getMoviesData(4);
-      final continueWatching = await _moviesRepository.getMoviesData(5);
-      final recentlyWatched = await _moviesRepository.getMoviesData(6);
-      final likedMovies = await _moviesRepository.getMoviesData(7);
+
+      final allCovers = [
+        ...myList,
+        ...europeanSeries,
+        ...popularNow,
+        ...netflixExclusives
+      ];
+
+      final randomCover = allCovers[Random().nextInt(allCovers.length)].poster;
 
       emit(
         state.copyWith(
@@ -29,9 +36,7 @@ class HomeCubit extends Cubit<HomeState> {
           europeanSeries: europeanSeries,
           popularNow: popularNow,
           netflixExclusives: netflixExclusives,
-          continueWatching: continueWatching,
-          recentlyWatched: recentlyWatched,
-          likedMovies: likedMovies,
+          randomCover: randomCover,
           status: Status.success,
         ),
       );

@@ -25,6 +25,7 @@ mixin _$HomeState {
   List<MovieModel> get likedMovies => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
+  String? get randomCover => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -45,7 +46,8 @@ abstract class $HomeStateCopyWith<$Res> {
       List<MovieModel> recentlyWatched,
       List<MovieModel> likedMovies,
       Status status,
-      String? errorMessage});
+      String? errorMessage,
+      String? randomCover});
 }
 
 /// @nodoc
@@ -70,6 +72,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? likedMovies = null,
     Object? status = null,
     Object? errorMessage = freezed,
+    Object? randomCover = freezed,
   }) {
     return _then(_value.copyWith(
       myList: null == myList
@@ -108,6 +111,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      randomCover: freezed == randomCover
+          ? _value.randomCover
+          : randomCover // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -129,7 +136,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       List<MovieModel> recentlyWatched,
       List<MovieModel> likedMovies,
       Status status,
-      String? errorMessage});
+      String? errorMessage,
+      String? randomCover});
 }
 
 /// @nodoc
@@ -152,6 +160,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? likedMovies = null,
     Object? status = null,
     Object? errorMessage = freezed,
+    Object? randomCover = freezed,
   }) {
     return _then(_$HomeStateImpl(
       myList: null == myList
@@ -190,6 +199,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      randomCover: freezed == randomCover
+          ? _value.randomCover
+          : randomCover // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -206,7 +219,8 @@ class _$HomeStateImpl implements _HomeState {
       final List<MovieModel> recentlyWatched = const [],
       final List<MovieModel> likedMovies = const [],
       this.status = Status.initial,
-      this.errorMessage})
+      this.errorMessage,
+      this.randomCover})
       : _myList = myList,
         _europeanSeries = europeanSeries,
         _popularNow = popularNow,
@@ -285,10 +299,12 @@ class _$HomeStateImpl implements _HomeState {
   final Status status;
   @override
   final String? errorMessage;
+  @override
+  final String? randomCover;
 
   @override
   String toString() {
-    return 'HomeState(myList: $myList, europeanSeries: $europeanSeries, popularNow: $popularNow, netflixExclusives: $netflixExclusives, continueWatching: $continueWatching, recentlyWatched: $recentlyWatched, likedMovies: $likedMovies, status: $status, errorMessage: $errorMessage)';
+    return 'HomeState(myList: $myList, europeanSeries: $europeanSeries, popularNow: $popularNow, netflixExclusives: $netflixExclusives, continueWatching: $continueWatching, recentlyWatched: $recentlyWatched, likedMovies: $likedMovies, status: $status, errorMessage: $errorMessage, randomCover: $randomCover)';
   }
 
   @override
@@ -311,7 +327,9 @@ class _$HomeStateImpl implements _HomeState {
                 .equals(other._likedMovies, _likedMovies) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+                other.errorMessage == errorMessage) &&
+            (identical(other.randomCover, randomCover) ||
+                other.randomCover == randomCover));
   }
 
   @override
@@ -325,7 +343,8 @@ class _$HomeStateImpl implements _HomeState {
       const DeepCollectionEquality().hash(_recentlyWatched),
       const DeepCollectionEquality().hash(_likedMovies),
       status,
-      errorMessage);
+      errorMessage,
+      randomCover);
 
   @JsonKey(ignore: true)
   @override
@@ -344,7 +363,8 @@ abstract class _HomeState implements HomeState {
       final List<MovieModel> recentlyWatched,
       final List<MovieModel> likedMovies,
       final Status status,
-      final String? errorMessage}) = _$HomeStateImpl;
+      final String? errorMessage,
+      final String? randomCover}) = _$HomeStateImpl;
 
   @override
   List<MovieModel> get myList;
@@ -364,6 +384,8 @@ abstract class _HomeState implements HomeState {
   Status get status;
   @override
   String? get errorMessage;
+  @override
+  String? get randomCover;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

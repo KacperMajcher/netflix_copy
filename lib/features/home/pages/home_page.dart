@@ -43,64 +43,71 @@ class HomePage extends StatelessWidget {
                   appBar: appBar(),
                   body: ListView(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 24, vertical: 20),
-                        child: Stack(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const DetailsPage(),
+                      if (state.randomCover != null)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 20),
+                          child: Stack(
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const DetailsPage(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: 466,
+                                  width: 400,
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.elliptical(10, 10),
+                                    ),
+                                    color: Colors.grey,
                                   ),
-                                );
-                              },
-                              child: Container(
-                                height: 466,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/covers/13reasonswhy_cover.jpg'),
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.elliptical(10, 10),
+                                    ),
+                                    child: Image.network(
+                                      state.randomCover!,
                                       fit: BoxFit.cover,
-                                      alignment: Alignment.topCenter),
-                                  color: Colors.grey,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.elliptical(10, 10),
+                                      alignment: Alignment.topCenter,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            const Column(
-                              children: [
-                                SizedBox(height: 412),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(width: 12),
-                                    Expanded(
-                                      child: PlayButton(
-                                        backgroundColor: Colors.white,
-                                        textColor: Colors.black,
+                              const Column(
+                                children: [
+                                  SizedBox(height: 412),
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(width: 12),
+                                      Expanded(
+                                        child: PlayButton(
+                                          backgroundColor: Colors.white,
+                                          textColor: Colors.black,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(width: 12),
-                                    Expanded(
-                                      child: MyListButton(
-                                        textColor: Colors.white,
-                                        backgroundColor: Color(0xFF32302D),
+                                      SizedBox(width: 12),
+                                      Expanded(
+                                        child: MyListButton(
+                                          textColor: Colors.white,
+                                          backgroundColor: Color(0xFF32302D),
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(width: 12),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
+                                      SizedBox(width: 12),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
                       Category(
                           title: 'My list',
                           covers: state.myList

@@ -12,5 +12,6 @@ class HomeState with _$HomeState {
     @Default([]) List<MovieModel> likedMovies,
     @Default(Status.initial) Status status,
     String? errorMessage,
+    String? randomCover,
   }) = _HomeState;
 }
