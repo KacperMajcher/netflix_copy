@@ -25,7 +25,7 @@ Map<String, dynamic> _$$MovieResponseDtoImplToJson(
 _$MovieDtoImpl _$$MovieDtoImplFromJson(Map<String, dynamic> json) =>
     _$MovieDtoImpl(
       adult: json['adult'] as bool,
-      backdropPath: json['backdrop_path'] as String,
+      backdropPath: json['backdrop_path'] as String?,
       genreIds:
           (json['genre_ids'] as List<dynamic>).map((e) => e as int).toList(),
       id: json['id'] as int,

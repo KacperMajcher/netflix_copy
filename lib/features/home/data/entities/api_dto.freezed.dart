@@ -184,7 +184,7 @@ MovieDto _$MovieDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MovieDto {
   bool get adult => throw _privateConstructorUsedError;
-  String get backdropPath => throw _privateConstructorUsedError;
+  String? get backdropPath => throw _privateConstructorUsedError;
   List<int> get genreIds => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
@@ -211,7 +211,7 @@ abstract class $MovieDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {bool adult,
-      String backdropPath,
+      String? backdropPath,
       List<int> genreIds,
       int id,
       String originalLanguage,
@@ -240,7 +240,7 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
   @override
   $Res call({
     Object? adult = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
@@ -259,10 +259,10 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       genreIds: null == genreIds
           ? _value.genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
@@ -325,7 +325,7 @@ abstract class _$$MovieDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool adult,
-      String backdropPath,
+      String? backdropPath,
       List<int> genreIds,
       int id,
       String originalLanguage,
@@ -352,7 +352,7 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? adult = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
@@ -371,10 +371,10 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       genreIds: null == genreIds
           ? _value._genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
@@ -433,7 +433,7 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
 class _$MovieDtoImpl implements _MovieDto {
   _$MovieDtoImpl(
       {required this.adult,
-      required this.backdropPath,
+      this.backdropPath,
       required final List<int> genreIds,
       required this.id,
       required this.originalLanguage,
@@ -454,7 +454,7 @@ class _$MovieDtoImpl implements _MovieDto {
   @override
   final bool adult;
   @override
-  final String backdropPath;
+  final String? backdropPath;
   final List<int> _genreIds;
   @override
   List<int> get genreIds {
@@ -557,7 +557,7 @@ class _$MovieDtoImpl implements _MovieDto {
 abstract class _MovieDto implements MovieDto {
   factory _MovieDto(
       {required final bool adult,
-      required final String backdropPath,
+      final String? backdropPath,
       required final List<int> genreIds,
       required final int id,
       required final String originalLanguage,
@@ -577,7 +577,7 @@ abstract class _MovieDto implements MovieDto {
   @override
   bool get adult;
   @override
-  String get backdropPath;
+  String? get backdropPath;
   @override
   List<int> get genreIds;
   @override

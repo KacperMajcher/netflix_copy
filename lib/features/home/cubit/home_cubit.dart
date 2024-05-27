@@ -15,17 +15,24 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> getMovies() async {
     emit(state.copyWith(status: Status.loading));
+
     try {
       final myList = await _moviesRepository.getMoviesData(1);
       final europeanSeries = await _moviesRepository.getMoviesData(2);
       final popularNow = await _moviesRepository.getMoviesData(3);
       final netflixExclusives = await _moviesRepository.getMoviesData(4);
+      final continueWatching = await _moviesRepository.getMoviesData(5);
+      final recentlyWatched = await _moviesRepository.getMoviesData(6);
+      final likedMovies = await _moviesRepository.getMoviesData(7);
 
       final allCovers = [
-        ...myList,
         ...europeanSeries,
+        ...myList,
+        ...continueWatching,
+        ...recentlyWatched,
+        ...likedMovies,
+        ...netflixExclusives,
         ...popularNow,
-        ...netflixExclusives
       ];
 
       final randomCover = allCovers[Random().nextInt(allCovers.length)].poster;
@@ -36,6 +43,9 @@ class HomeCubit extends Cubit<HomeState> {
           europeanSeries: europeanSeries,
           popularNow: popularNow,
           netflixExclusives: netflixExclusives,
+          continueWatching: continueWatching,
+          recentlyWatched: recentlyWatched,
+          likedMovies: likedMovies,
           randomCover: randomCover,
           status: Status.success,
         ),
