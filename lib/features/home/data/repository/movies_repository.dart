@@ -12,6 +12,7 @@ class MoviesRepository {
   Future<List<MovieModel>> getMoviesData(int page) async {
     try {
       const String apiKey = ApiConfig.apiKey;
+      log('Fetching movies with apiKey: $apiKey, page: $page');
 
       final MovieResponseDto response = await remoteDataSource.getMoviesData(
         apiKey,
@@ -23,7 +24,7 @@ class MoviesRepository {
           id: movieDto.id,
           cover: '${ApiConfig.imageBaseUrl}${movieDto.backdropPath}',
           poster: '${ApiConfig.imageBaseUrl}${movieDto.posterPath}',
-          title: movieDto.originalTitle,
+          title: movieDto.originalTitle ?? movieDto.title,
           release: movieDto.releaseDate,
           overview: movieDto.overview,
         );

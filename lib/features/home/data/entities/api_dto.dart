@@ -23,7 +23,7 @@ abstract class MovieDto with _$MovieDto {
     required List<int> genreIds,
     required int id,
     required String originalLanguage,
-    required String originalTitle,
+    String? originalTitle,
     required String overview,
     required double popularity,
     required String posterPath,

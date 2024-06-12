@@ -188,7 +188,7 @@ mixin _$MovieDto {
   List<int> get genreIds => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
-  String get originalTitle => throw _privateConstructorUsedError;
+  String? get originalTitle => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
   double get popularity => throw _privateConstructorUsedError;
   String get posterPath => throw _privateConstructorUsedError;
@@ -215,7 +215,7 @@ abstract class $MovieDtoCopyWith<$Res> {
       List<int> genreIds,
       int id,
       String originalLanguage,
-      String originalTitle,
+      String? originalTitle,
       String overview,
       double popularity,
       String posterPath,
@@ -244,7 +244,7 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
-    Object? originalTitle = null,
+    Object? originalTitle = freezed,
     Object? overview = null,
     Object? popularity = null,
     Object? posterPath = null,
@@ -275,10 +275,10 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
               as String,
-      originalTitle: null == originalTitle
+      originalTitle: freezed == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       overview: null == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
@@ -329,7 +329,7 @@ abstract class _$$MovieDtoImplCopyWith<$Res>
       List<int> genreIds,
       int id,
       String originalLanguage,
-      String originalTitle,
+      String? originalTitle,
       String overview,
       double popularity,
       String posterPath,
@@ -356,7 +356,7 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
-    Object? originalTitle = null,
+    Object? originalTitle = freezed,
     Object? overview = null,
     Object? popularity = null,
     Object? posterPath = null,
@@ -387,10 +387,10 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
               as String,
-      originalTitle: null == originalTitle
+      originalTitle: freezed == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       overview: null == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
@@ -437,7 +437,7 @@ class _$MovieDtoImpl implements _MovieDto {
       required final List<int> genreIds,
       required this.id,
       required this.originalLanguage,
-      required this.originalTitle,
+      this.originalTitle,
       required this.overview,
       required this.popularity,
       required this.posterPath,
@@ -468,7 +468,7 @@ class _$MovieDtoImpl implements _MovieDto {
   @override
   final String originalLanguage;
   @override
-  final String originalTitle;
+  final String? originalTitle;
   @override
   final String overview;
   @override
@@ -561,7 +561,7 @@ abstract class _MovieDto implements MovieDto {
       required final List<int> genreIds,
       required final int id,
       required final String originalLanguage,
-      required final String originalTitle,
+      final String? originalTitle,
       required final String overview,
       required final double popularity,
       required final String posterPath,
@@ -585,7 +585,7 @@ abstract class _MovieDto implements MovieDto {
   @override
   String get originalLanguage;
   @override
-  String get originalTitle;
+  String? get originalTitle;
   @override
   String get overview;
   @override
