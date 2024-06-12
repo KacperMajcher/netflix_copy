@@ -6,13 +6,13 @@ class CategoryRecentlyWatched extends StatelessWidget {
   const CategoryRecentlyWatched({
     super.key,
     required this.title,
-    required this.header,
-    required this.episodeTitle,
+    required this.covers,
+    required this.titles,
   });
 
   final String title;
-  final String header;
-  final String episodeTitle;
+  final List<String> covers;
+  final List<String> titles;
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +35,12 @@ class CategoryRecentlyWatched extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: [
-              RecentlyWatchedCard(header: header, episodeTitle: episodeTitle),
-              RecentlyWatchedCard(header: header, episodeTitle: episodeTitle),
-              RecentlyWatchedCard(header: header, episodeTitle: episodeTitle),
-              RecentlyWatchedCard(header: header, episodeTitle: episodeTitle),
-            ],
+            children: List.generate(covers.length, (index) {
+              return RecentlyWatchedCard(
+                title: titles[index],
+                cover: covers[index],
+              );
+            }),
           ),
         ),
         const SizedBox(width: 20),

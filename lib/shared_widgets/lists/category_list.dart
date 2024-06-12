@@ -12,7 +12,11 @@ class CategoryList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: covers
-            .map((cover) => MovieCard(cover: 'assets/covers/$cover'))
+            .map(
+              (cover) => MovieCard(
+                cover: cover,
+              ),
+            )
             .toList(),
       ),
     );

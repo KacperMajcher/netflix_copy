@@ -35,5 +35,5 @@ class EpisodesList extends StatelessWidget {
         ),
       ],
     );
-  }
+  } //TODO: Implement api service
 }

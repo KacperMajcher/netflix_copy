@@ -19,11 +19,11 @@ abstract class MovieDto with _$MovieDto {
   @JsonSerializable(fieldRename: FieldRename.snake)
   factory MovieDto({
     required bool adult,
-    required String backdropPath,
+    String? backdropPath,
     required List<int> genreIds,
     required int id,
     required String originalLanguage,
-    required String originalTitle,
+    String? originalTitle,
     required String overview,
     required double popularity,
     required String posterPath,

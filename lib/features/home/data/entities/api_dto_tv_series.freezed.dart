@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'api_dto.dart';
+part of 'api_dto_tv_series.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,34 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-MovieResponseDto _$MovieResponseDtoFromJson(Map<String, dynamic> json) {
-  return _MovieResponseDto.fromJson(json);
+TvSeriesResponseDto _$TvSeriesResponseDtoFromJson(Map<String, dynamic> json) {
+  return _TvSeriesResponseDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$MovieResponseDto {
+mixin _$TvSeriesResponseDto {
   int get page => throw _privateConstructorUsedError;
-  List<MovieDto> get results => throw _privateConstructorUsedError;
+  List<TvSeriesDto> get results => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieResponseDtoCopyWith<MovieResponseDto> get copyWith =>
+  $TvSeriesResponseDtoCopyWith<TvSeriesResponseDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MovieResponseDtoCopyWith<$Res> {
-  factory $MovieResponseDtoCopyWith(
-          MovieResponseDto value, $Res Function(MovieResponseDto) then) =
-      _$MovieResponseDtoCopyWithImpl<$Res, MovieResponseDto>;
+abstract class $TvSeriesResponseDtoCopyWith<$Res> {
+  factory $TvSeriesResponseDtoCopyWith(
+          TvSeriesResponseDto value, $Res Function(TvSeriesResponseDto) then) =
+      _$TvSeriesResponseDtoCopyWithImpl<$Res, TvSeriesResponseDto>;
   @useResult
-  $Res call({int page, List<MovieDto> results});
+  $Res call({int page, List<TvSeriesDto> results});
 }
 
 /// @nodoc
-class _$MovieResponseDtoCopyWithImpl<$Res, $Val extends MovieResponseDto>
-    implements $MovieResponseDtoCopyWith<$Res> {
-  _$MovieResponseDtoCopyWithImpl(this._value, this._then);
+class _$TvSeriesResponseDtoCopyWithImpl<$Res, $Val extends TvSeriesResponseDto>
+    implements $TvSeriesResponseDtoCopyWith<$Res> {
+  _$TvSeriesResponseDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -62,28 +62,28 @@ class _$MovieResponseDtoCopyWithImpl<$Res, $Val extends MovieResponseDto>
       results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
-              as List<MovieDto>,
+              as List<TvSeriesDto>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$MovieResponseDtoImplCopyWith<$Res>
-    implements $MovieResponseDtoCopyWith<$Res> {
-  factory _$$MovieResponseDtoImplCopyWith(_$MovieResponseDtoImpl value,
-          $Res Function(_$MovieResponseDtoImpl) then) =
-      __$$MovieResponseDtoImplCopyWithImpl<$Res>;
+abstract class _$$TvSeriesResponseDtoImplCopyWith<$Res>
+    implements $TvSeriesResponseDtoCopyWith<$Res> {
+  factory _$$TvSeriesResponseDtoImplCopyWith(_$TvSeriesResponseDtoImpl value,
+          $Res Function(_$TvSeriesResponseDtoImpl) then) =
+      __$$TvSeriesResponseDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int page, List<MovieDto> results});
+  $Res call({int page, List<TvSeriesDto> results});
 }
 
 /// @nodoc
-class __$$MovieResponseDtoImplCopyWithImpl<$Res>
-    extends _$MovieResponseDtoCopyWithImpl<$Res, _$MovieResponseDtoImpl>
-    implements _$$MovieResponseDtoImplCopyWith<$Res> {
-  __$$MovieResponseDtoImplCopyWithImpl(_$MovieResponseDtoImpl _value,
-      $Res Function(_$MovieResponseDtoImpl) _then)
+class __$$TvSeriesResponseDtoImplCopyWithImpl<$Res>
+    extends _$TvSeriesResponseDtoCopyWithImpl<$Res, _$TvSeriesResponseDtoImpl>
+    implements _$$TvSeriesResponseDtoImplCopyWith<$Res> {
+  __$$TvSeriesResponseDtoImplCopyWithImpl(_$TvSeriesResponseDtoImpl _value,
+      $Res Function(_$TvSeriesResponseDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$MovieResponseDtoImplCopyWithImpl<$Res>
     Object? page = null,
     Object? results = null,
   }) {
-    return _then(_$MovieResponseDtoImpl(
+    return _then(_$TvSeriesResponseDtoImpl(
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -100,26 +100,26 @@ class __$$MovieResponseDtoImplCopyWithImpl<$Res>
       results: null == results
           ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
-              as List<MovieDto>,
+              as List<TvSeriesDto>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$MovieResponseDtoImpl implements _MovieResponseDto {
-  const _$MovieResponseDtoImpl(
-      {required this.page, required final List<MovieDto> results})
+class _$TvSeriesResponseDtoImpl implements _TvSeriesResponseDto {
+  const _$TvSeriesResponseDtoImpl(
+      {required this.page, required final List<TvSeriesDto> results})
       : _results = results;
 
-  factory _$MovieResponseDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MovieResponseDtoImplFromJson(json);
+  factory _$TvSeriesResponseDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TvSeriesResponseDtoImplFromJson(json);
 
   @override
   final int page;
-  final List<MovieDto> _results;
+  final List<TvSeriesDto> _results;
   @override
-  List<MovieDto> get results {
+  List<TvSeriesDto> get results {
     if (_results is EqualUnmodifiableListView) return _results;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_results);
@@ -127,14 +127,14 @@ class _$MovieResponseDtoImpl implements _MovieResponseDto {
 
   @override
   String toString() {
-    return 'MovieResponseDto(page: $page, results: $results)';
+    return 'TvSeriesResponseDto(page: $page, results: $results)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MovieResponseDtoImpl &&
+            other is _$TvSeriesResponseDtoImpl &&
             (identical(other.page, page) || other.page == page) &&
             const DeepCollectionEquality().equals(other._results, _results));
   }
@@ -147,67 +147,67 @@ class _$MovieResponseDtoImpl implements _MovieResponseDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MovieResponseDtoImplCopyWith<_$MovieResponseDtoImpl> get copyWith =>
-      __$$MovieResponseDtoImplCopyWithImpl<_$MovieResponseDtoImpl>(
+  _$$TvSeriesResponseDtoImplCopyWith<_$TvSeriesResponseDtoImpl> get copyWith =>
+      __$$TvSeriesResponseDtoImplCopyWithImpl<_$TvSeriesResponseDtoImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MovieResponseDtoImplToJson(
+    return _$$TvSeriesResponseDtoImplToJson(
       this,
     );
   }
 }
 
-abstract class _MovieResponseDto implements MovieResponseDto {
-  const factory _MovieResponseDto(
+abstract class _TvSeriesResponseDto implements TvSeriesResponseDto {
+  const factory _TvSeriesResponseDto(
       {required final int page,
-      required final List<MovieDto> results}) = _$MovieResponseDtoImpl;
+      required final List<TvSeriesDto> results}) = _$TvSeriesResponseDtoImpl;
 
-  factory _MovieResponseDto.fromJson(Map<String, dynamic> json) =
-      _$MovieResponseDtoImpl.fromJson;
+  factory _TvSeriesResponseDto.fromJson(Map<String, dynamic> json) =
+      _$TvSeriesResponseDtoImpl.fromJson;
 
   @override
   int get page;
   @override
-  List<MovieDto> get results;
+  List<TvSeriesDto> get results;
   @override
   @JsonKey(ignore: true)
-  _$$MovieResponseDtoImplCopyWith<_$MovieResponseDtoImpl> get copyWith =>
+  _$$TvSeriesResponseDtoImplCopyWith<_$TvSeriesResponseDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-MovieDto _$MovieDtoFromJson(Map<String, dynamic> json) {
-  return _MovieDto.fromJson(json);
+TvSeriesDto _$TvSeriesDtoFromJson(Map<String, dynamic> json) {
+  return _TvSeriesDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$MovieDto {
+mixin _$TvSeriesDto {
   bool get adult => throw _privateConstructorUsedError;
   String? get backdropPath => throw _privateConstructorUsedError;
   List<int> get genreIds => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
-  String? get originalTitle => throw _privateConstructorUsedError;
+  String get originalName => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
   double get popularity => throw _privateConstructorUsedError;
-  String get posterPath => throw _privateConstructorUsedError;
-  String get releaseDate => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  bool get video => throw _privateConstructorUsedError;
+  String? get posterPath => throw _privateConstructorUsedError;
+  String get firstAirDate => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   double get voteAverage => throw _privateConstructorUsedError;
   int get voteCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieDtoCopyWith<MovieDto> get copyWith =>
+  $TvSeriesDtoCopyWith<TvSeriesDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MovieDtoCopyWith<$Res> {
-  factory $MovieDtoCopyWith(MovieDto value, $Res Function(MovieDto) then) =
-      _$MovieDtoCopyWithImpl<$Res, MovieDto>;
+abstract class $TvSeriesDtoCopyWith<$Res> {
+  factory $TvSeriesDtoCopyWith(
+          TvSeriesDto value, $Res Function(TvSeriesDto) then) =
+      _$TvSeriesDtoCopyWithImpl<$Res, TvSeriesDto>;
   @useResult
   $Res call(
       {bool adult,
@@ -215,21 +215,20 @@ abstract class $MovieDtoCopyWith<$Res> {
       List<int> genreIds,
       int id,
       String originalLanguage,
-      String? originalTitle,
+      String originalName,
       String overview,
       double popularity,
-      String posterPath,
-      String releaseDate,
-      String title,
-      bool video,
+      String? posterPath,
+      String firstAirDate,
+      String name,
       double voteAverage,
       int voteCount});
 }
 
 /// @nodoc
-class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
-    implements $MovieDtoCopyWith<$Res> {
-  _$MovieDtoCopyWithImpl(this._value, this._then);
+class _$TvSeriesDtoCopyWithImpl<$Res, $Val extends TvSeriesDto>
+    implements $TvSeriesDtoCopyWith<$Res> {
+  _$TvSeriesDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -244,13 +243,12 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
-    Object? originalTitle = freezed,
+    Object? originalName = null,
     Object? overview = null,
     Object? popularity = null,
-    Object? posterPath = null,
-    Object? releaseDate = null,
-    Object? title = null,
-    Object? video = null,
+    Object? posterPath = freezed,
+    Object? firstAirDate = null,
+    Object? name = null,
     Object? voteAverage = null,
     Object? voteCount = null,
   }) {
@@ -275,10 +273,10 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
               as String,
-      originalTitle: freezed == originalTitle
-          ? _value.originalTitle
-          : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+      originalName: null == originalName
+          ? _value.originalName
+          : originalName // ignore: cast_nullable_to_non_nullable
+              as String,
       overview: null == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
@@ -287,22 +285,18 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
               as double,
-      posterPath: null == posterPath
+      posterPath: freezed == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstAirDate: null == firstAirDate
+          ? _value.firstAirDate
+          : firstAirDate // ignore: cast_nullable_to_non_nullable
               as String,
-      releaseDate: null == releaseDate
-          ? _value.releaseDate
-          : releaseDate // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      video: null == video
-          ? _value.video
-          : video // ignore: cast_nullable_to_non_nullable
-              as bool,
       voteAverage: null == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
@@ -316,11 +310,11 @@ class _$MovieDtoCopyWithImpl<$Res, $Val extends MovieDto>
 }
 
 /// @nodoc
-abstract class _$$MovieDtoImplCopyWith<$Res>
-    implements $MovieDtoCopyWith<$Res> {
-  factory _$$MovieDtoImplCopyWith(
-          _$MovieDtoImpl value, $Res Function(_$MovieDtoImpl) then) =
-      __$$MovieDtoImplCopyWithImpl<$Res>;
+abstract class _$$TvSeriesDtoImplCopyWith<$Res>
+    implements $TvSeriesDtoCopyWith<$Res> {
+  factory _$$TvSeriesDtoImplCopyWith(
+          _$TvSeriesDtoImpl value, $Res Function(_$TvSeriesDtoImpl) then) =
+      __$$TvSeriesDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -329,23 +323,22 @@ abstract class _$$MovieDtoImplCopyWith<$Res>
       List<int> genreIds,
       int id,
       String originalLanguage,
-      String? originalTitle,
+      String originalName,
       String overview,
       double popularity,
-      String posterPath,
-      String releaseDate,
-      String title,
-      bool video,
+      String? posterPath,
+      String firstAirDate,
+      String name,
       double voteAverage,
       int voteCount});
 }
 
 /// @nodoc
-class __$$MovieDtoImplCopyWithImpl<$Res>
-    extends _$MovieDtoCopyWithImpl<$Res, _$MovieDtoImpl>
-    implements _$$MovieDtoImplCopyWith<$Res> {
-  __$$MovieDtoImplCopyWithImpl(
-      _$MovieDtoImpl _value, $Res Function(_$MovieDtoImpl) _then)
+class __$$TvSeriesDtoImplCopyWithImpl<$Res>
+    extends _$TvSeriesDtoCopyWithImpl<$Res, _$TvSeriesDtoImpl>
+    implements _$$TvSeriesDtoImplCopyWith<$Res> {
+  __$$TvSeriesDtoImplCopyWithImpl(
+      _$TvSeriesDtoImpl _value, $Res Function(_$TvSeriesDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -356,17 +349,16 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
-    Object? originalTitle = freezed,
+    Object? originalName = null,
     Object? overview = null,
     Object? popularity = null,
-    Object? posterPath = null,
-    Object? releaseDate = null,
-    Object? title = null,
-    Object? video = null,
+    Object? posterPath = freezed,
+    Object? firstAirDate = null,
+    Object? name = null,
     Object? voteAverage = null,
     Object? voteCount = null,
   }) {
-    return _then(_$MovieDtoImpl(
+    return _then(_$TvSeriesDtoImpl(
       adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
@@ -387,10 +379,10 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
               as String,
-      originalTitle: freezed == originalTitle
-          ? _value.originalTitle
-          : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+      originalName: null == originalName
+          ? _value.originalName
+          : originalName // ignore: cast_nullable_to_non_nullable
+              as String,
       overview: null == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
@@ -399,22 +391,18 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
               as double,
-      posterPath: null == posterPath
+      posterPath: freezed == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstAirDate: null == firstAirDate
+          ? _value.firstAirDate
+          : firstAirDate // ignore: cast_nullable_to_non_nullable
               as String,
-      releaseDate: null == releaseDate
-          ? _value.releaseDate
-          : releaseDate // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      video: null == video
-          ? _value.video
-          : video // ignore: cast_nullable_to_non_nullable
-              as bool,
       voteAverage: null == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
@@ -430,26 +418,25 @@ class __$$MovieDtoImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$MovieDtoImpl implements _MovieDto {
-  _$MovieDtoImpl(
+class _$TvSeriesDtoImpl implements _TvSeriesDto {
+  _$TvSeriesDtoImpl(
       {required this.adult,
       this.backdropPath,
       required final List<int> genreIds,
       required this.id,
       required this.originalLanguage,
-      this.originalTitle,
+      required this.originalName,
       required this.overview,
       required this.popularity,
-      required this.posterPath,
-      required this.releaseDate,
-      required this.title,
-      required this.video,
+      this.posterPath,
+      required this.firstAirDate,
+      required this.name,
       required this.voteAverage,
       required this.voteCount})
       : _genreIds = genreIds;
 
-  factory _$MovieDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MovieDtoImplFromJson(json);
+  factory _$TvSeriesDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TvSeriesDtoImplFromJson(json);
 
   @override
   final bool adult;
@@ -468,19 +455,17 @@ class _$MovieDtoImpl implements _MovieDto {
   @override
   final String originalLanguage;
   @override
-  final String? originalTitle;
+  final String originalName;
   @override
   final String overview;
   @override
   final double popularity;
   @override
-  final String posterPath;
+  final String? posterPath;
   @override
-  final String releaseDate;
+  final String firstAirDate;
   @override
-  final String title;
-  @override
-  final bool video;
+  final String name;
   @override
   final double voteAverage;
   @override
@@ -488,14 +473,14 @@ class _$MovieDtoImpl implements _MovieDto {
 
   @override
   String toString() {
-    return 'MovieDto(adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
+    return 'TvSeriesDto(adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalName: $originalName, overview: $overview, popularity: $popularity, posterPath: $posterPath, firstAirDate: $firstAirDate, name: $name, voteAverage: $voteAverage, voteCount: $voteCount)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MovieDtoImpl &&
+            other is _$TvSeriesDtoImpl &&
             (identical(other.adult, adult) || other.adult == adult) &&
             (identical(other.backdropPath, backdropPath) ||
                 other.backdropPath == backdropPath) &&
@@ -503,18 +488,17 @@ class _$MovieDtoImpl implements _MovieDto {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.originalLanguage, originalLanguage) ||
                 other.originalLanguage == originalLanguage) &&
-            (identical(other.originalTitle, originalTitle) ||
-                other.originalTitle == originalTitle) &&
+            (identical(other.originalName, originalName) ||
+                other.originalName == originalName) &&
             (identical(other.overview, overview) ||
                 other.overview == overview) &&
             (identical(other.popularity, popularity) ||
                 other.popularity == popularity) &&
             (identical(other.posterPath, posterPath) ||
                 other.posterPath == posterPath) &&
-            (identical(other.releaseDate, releaseDate) ||
-                other.releaseDate == releaseDate) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.video, video) || other.video == video) &&
+            (identical(other.firstAirDate, firstAirDate) ||
+                other.firstAirDate == firstAirDate) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.voteAverage, voteAverage) ||
                 other.voteAverage == voteAverage) &&
             (identical(other.voteCount, voteCount) ||
@@ -530,49 +514,47 @@ class _$MovieDtoImpl implements _MovieDto {
       const DeepCollectionEquality().hash(_genreIds),
       id,
       originalLanguage,
-      originalTitle,
+      originalName,
       overview,
       popularity,
       posterPath,
-      releaseDate,
-      title,
-      video,
+      firstAirDate,
+      name,
       voteAverage,
       voteCount);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MovieDtoImplCopyWith<_$MovieDtoImpl> get copyWith =>
-      __$$MovieDtoImplCopyWithImpl<_$MovieDtoImpl>(this, _$identity);
+  _$$TvSeriesDtoImplCopyWith<_$TvSeriesDtoImpl> get copyWith =>
+      __$$TvSeriesDtoImplCopyWithImpl<_$TvSeriesDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MovieDtoImplToJson(
+    return _$$TvSeriesDtoImplToJson(
       this,
     );
   }
 }
 
-abstract class _MovieDto implements MovieDto {
-  factory _MovieDto(
+abstract class _TvSeriesDto implements TvSeriesDto {
+  factory _TvSeriesDto(
       {required final bool adult,
       final String? backdropPath,
       required final List<int> genreIds,
       required final int id,
       required final String originalLanguage,
-      final String? originalTitle,
+      required final String originalName,
       required final String overview,
       required final double popularity,
-      required final String posterPath,
-      required final String releaseDate,
-      required final String title,
-      required final bool video,
+      final String? posterPath,
+      required final String firstAirDate,
+      required final String name,
       required final double voteAverage,
-      required final int voteCount}) = _$MovieDtoImpl;
+      required final int voteCount}) = _$TvSeriesDtoImpl;
 
-  factory _MovieDto.fromJson(Map<String, dynamic> json) =
-      _$MovieDtoImpl.fromJson;
+  factory _TvSeriesDto.fromJson(Map<String, dynamic> json) =
+      _$TvSeriesDtoImpl.fromJson;
 
   @override
   bool get adult;
@@ -585,25 +567,23 @@ abstract class _MovieDto implements MovieDto {
   @override
   String get originalLanguage;
   @override
-  String? get originalTitle;
+  String get originalName;
   @override
   String get overview;
   @override
   double get popularity;
   @override
-  String get posterPath;
+  String? get posterPath;
   @override
-  String get releaseDate;
+  String get firstAirDate;
   @override
-  String get title;
-  @override
-  bool get video;
+  String get name;
   @override
   double get voteAverage;
   @override
   int get voteCount;
   @override
   @JsonKey(ignore: true)
-  _$$MovieDtoImplCopyWith<_$MovieDtoImpl> get copyWith =>
+  _$$TvSeriesDtoImplCopyWith<_$TvSeriesDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
