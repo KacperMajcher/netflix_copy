@@ -16,10 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeState {
-  List<MovieModel> get myList => throw _privateConstructorUsedError;
-  List<MovieModel> get europeanSeries => throw _privateConstructorUsedError;
+  List<TvSeriesModel> get myList => throw _privateConstructorUsedError;
+  List<TvSeriesModel> get europeanSeries => throw _privateConstructorUsedError;
   List<MovieModel> get popularNow => throw _privateConstructorUsedError;
-  List<MovieModel> get netflixExclusives => throw _privateConstructorUsedError;
+  List<TvSeriesModel> get netflixExclusives =>
+      throw _privateConstructorUsedError;
   List<MovieModel> get continueWatching => throw _privateConstructorUsedError;
   List<MovieModel> get recentlyWatched => throw _privateConstructorUsedError;
   List<MovieModel> get likedMovies => throw _privateConstructorUsedError;
@@ -38,10 +39,10 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {List<MovieModel> myList,
-      List<MovieModel> europeanSeries,
+      {List<TvSeriesModel> myList,
+      List<TvSeriesModel> europeanSeries,
       List<MovieModel> popularNow,
-      List<MovieModel> netflixExclusives,
+      List<TvSeriesModel> netflixExclusives,
       List<MovieModel> continueWatching,
       List<MovieModel> recentlyWatched,
       List<MovieModel> likedMovies,
@@ -78,11 +79,11 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       myList: null == myList
           ? _value.myList
           : myList // ignore: cast_nullable_to_non_nullable
-              as List<MovieModel>,
+              as List<TvSeriesModel>,
       europeanSeries: null == europeanSeries
           ? _value.europeanSeries
           : europeanSeries // ignore: cast_nullable_to_non_nullable
-              as List<MovieModel>,
+              as List<TvSeriesModel>,
       popularNow: null == popularNow
           ? _value.popularNow
           : popularNow // ignore: cast_nullable_to_non_nullable
@@ -90,7 +91,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       netflixExclusives: null == netflixExclusives
           ? _value.netflixExclusives
           : netflixExclusives // ignore: cast_nullable_to_non_nullable
-              as List<MovieModel>,
+              as List<TvSeriesModel>,
       continueWatching: null == continueWatching
           ? _value.continueWatching
           : continueWatching // ignore: cast_nullable_to_non_nullable
@@ -128,10 +129,10 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<MovieModel> myList,
-      List<MovieModel> europeanSeries,
+      {List<TvSeriesModel> myList,
+      List<TvSeriesModel> europeanSeries,
       List<MovieModel> popularNow,
-      List<MovieModel> netflixExclusives,
+      List<TvSeriesModel> netflixExclusives,
       List<MovieModel> continueWatching,
       List<MovieModel> recentlyWatched,
       List<MovieModel> likedMovies,
@@ -166,11 +167,11 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       myList: null == myList
           ? _value._myList
           : myList // ignore: cast_nullable_to_non_nullable
-              as List<MovieModel>,
+              as List<TvSeriesModel>,
       europeanSeries: null == europeanSeries
           ? _value._europeanSeries
           : europeanSeries // ignore: cast_nullable_to_non_nullable
-              as List<MovieModel>,
+              as List<TvSeriesModel>,
       popularNow: null == popularNow
           ? _value._popularNow
           : popularNow // ignore: cast_nullable_to_non_nullable
@@ -178,7 +179,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       netflixExclusives: null == netflixExclusives
           ? _value._netflixExclusives
           : netflixExclusives // ignore: cast_nullable_to_non_nullable
-              as List<MovieModel>,
+              as List<TvSeriesModel>,
       continueWatching: null == continueWatching
           ? _value._continueWatching
           : continueWatching // ignore: cast_nullable_to_non_nullable
@@ -211,10 +212,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl implements _HomeState {
   _$HomeStateImpl(
-      {final List<MovieModel> myList = const [],
-      final List<MovieModel> europeanSeries = const [],
+      {final List<TvSeriesModel> myList = const [],
+      final List<TvSeriesModel> europeanSeries = const [],
       final List<MovieModel> popularNow = const [],
-      final List<MovieModel> netflixExclusives = const [],
+      final List<TvSeriesModel> netflixExclusives = const [],
       final List<MovieModel> continueWatching = const [],
       final List<MovieModel> recentlyWatched = const [],
       final List<MovieModel> likedMovies = const [],
@@ -229,19 +230,19 @@ class _$HomeStateImpl implements _HomeState {
         _recentlyWatched = recentlyWatched,
         _likedMovies = likedMovies;
 
-  final List<MovieModel> _myList;
+  final List<TvSeriesModel> _myList;
   @override
   @JsonKey()
-  List<MovieModel> get myList {
+  List<TvSeriesModel> get myList {
     if (_myList is EqualUnmodifiableListView) return _myList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_myList);
   }
 
-  final List<MovieModel> _europeanSeries;
+  final List<TvSeriesModel> _europeanSeries;
   @override
   @JsonKey()
-  List<MovieModel> get europeanSeries {
+  List<TvSeriesModel> get europeanSeries {
     if (_europeanSeries is EqualUnmodifiableListView) return _europeanSeries;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_europeanSeries);
@@ -256,10 +257,10 @@ class _$HomeStateImpl implements _HomeState {
     return EqualUnmodifiableListView(_popularNow);
   }
 
-  final List<MovieModel> _netflixExclusives;
+  final List<TvSeriesModel> _netflixExclusives;
   @override
   @JsonKey()
-  List<MovieModel> get netflixExclusives {
+  List<TvSeriesModel> get netflixExclusives {
     if (_netflixExclusives is EqualUnmodifiableListView)
       return _netflixExclusives;
     // ignore: implicit_dynamic_type
@@ -355,10 +356,10 @@ class _$HomeStateImpl implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   factory _HomeState(
-      {final List<MovieModel> myList,
-      final List<MovieModel> europeanSeries,
+      {final List<TvSeriesModel> myList,
+      final List<TvSeriesModel> europeanSeries,
       final List<MovieModel> popularNow,
-      final List<MovieModel> netflixExclusives,
+      final List<TvSeriesModel> netflixExclusives,
       final List<MovieModel> continueWatching,
       final List<MovieModel> recentlyWatched,
       final List<MovieModel> likedMovies,
@@ -367,13 +368,13 @@ abstract class _HomeState implements HomeState {
       final String? randomCover}) = _$HomeStateImpl;
 
   @override
-  List<MovieModel> get myList;
+  List<TvSeriesModel> get myList;
   @override
-  List<MovieModel> get europeanSeries;
+  List<TvSeriesModel> get europeanSeries;
   @override
   List<MovieModel> get popularNow;
   @override
-  List<MovieModel> get netflixExclusives;
+  List<TvSeriesModel> get netflixExclusives;
   @override
   List<MovieModel> get continueWatching;
   @override
