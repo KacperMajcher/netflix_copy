@@ -15,4 +15,10 @@ abstract class TvSeriesRemoteRetrofitDataSource {
     @Query('api_key') String apiKey,
     @Query('page') String page,
   );
+
+  @GET('/tv/{id}')
+  Future<TvSeriesDetailsDto> getTvSeriesDetails(
+    @Path('id') int id,
+    @Query('api_key') String apiKey,
+  );
 }
