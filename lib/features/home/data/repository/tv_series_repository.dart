@@ -36,4 +36,31 @@ class TvSeriesRepository {
       rethrow;
     }
   }
+
+  Future<TvSeriesDetailsModel> getTvSeriesDetails(int id) async {
+    try {
+      const String apiKey = ApiConfig.apiKey;
+
+      final TvSeriesDetailsDto tvSeriesDto =
+          await remoteDataSource.getTvSeriesDetails(
+        id,
+        apiKey,
+      );
+
+      return TvSeriesDetailsModel(
+        id: tvSeriesDto.id,
+        name: tvSeriesDto.name,
+        numberOfSeasons: tvSeriesDto.numberOfSeasons,
+        uploaded: tvSeriesDto.firstAirDate,
+        adult: tvSeriesDto.adult,
+        overview: tvSeriesDto.overview,
+        genres: tvSeriesDto.genres,
+        createdBy: tvSeriesDto.createdBy,
+        seasons: tvSeriesDto.seasons,
+      );
+    } catch (e) {
+      log('Error: $e');
+      rethrow;
+    }
+  }
 }
