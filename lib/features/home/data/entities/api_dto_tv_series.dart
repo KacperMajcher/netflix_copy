@@ -17,7 +17,7 @@ abstract class TvSeriesResponseDto with _$TvSeriesResponseDto {
 @freezed
 abstract class TvSeriesDto with _$TvSeriesDto {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  factory TvSeriesDto({
+  const factory TvSeriesDto({
     required bool adult,
     String? backdropPath,
     required List<int> genreIds,
@@ -35,4 +35,42 @@ abstract class TvSeriesDto with _$TvSeriesDto {
 
   factory TvSeriesDto.fromJson(Map<String, dynamic> json) =>
       _$TvSeriesDtoFromJson(json);
+}
+
+@freezed
+class TvSeriesDetailsDto with _$TvSeriesDetailsDto {
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  const factory TvSeriesDetailsDto({
+    required int id,
+    required String name,
+    required int numberOfSeasons,
+    required String firstAirDate,
+    required bool adult,
+    required String overview,
+    @JsonKey(fromJson: _genresFromJson) required List<String> genres,
+    @JsonKey(fromJson: _createdByFromJson) required List<String> createdBy,
+    required List<TvSeriesSingleSeasonDto> seasons,
+  }) = _TvSeriesDetailsDto;
+
+  factory TvSeriesDetailsDto.fromJson(Map<String, dynamic> json) =>
+      _$TvSeriesDetailsDtoFromJson(json);
+}
+
+List<String> _genresFromJson(List<dynamic> json) =>
+    json.map((e) => e['name'] as String).toList();
+
+List<String> _createdByFromJson(List<dynamic> json) =>
+    json.map((e) => e['name'] as String).toList();
+
+@freezed
+class TvSeriesSingleSeasonDto with _$TvSeriesSingleSeasonDto {
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  const factory TvSeriesSingleSeasonDto({
+    required String airDate,
+    required int episodeCount,
+    required int seasonNumber,
+  }) = _TvSeriesSingleSeasonDto;
+
+  factory TvSeriesSingleSeasonDto.fromJson(Map<String, dynamic> json) =>
+      _$TvSeriesSingleSeasonDtoFromJson(json);
 }

@@ -56,3 +56,50 @@ Map<String, dynamic> _$$TvSeriesDtoImplToJson(_$TvSeriesDtoImpl instance) =>
       'vote_average': instance.voteAverage,
       'vote_count': instance.voteCount,
     };
+
+_$TvSeriesDetailsDtoImpl _$$TvSeriesDetailsDtoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TvSeriesDetailsDtoImpl(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      numberOfSeasons: json['number_of_seasons'] as int,
+      firstAirDate: json['first_air_date'] as String,
+      adult: json['adult'] as bool,
+      overview: json['overview'] as String,
+      genres: _genresFromJson(json['genres'] as List),
+      createdBy: _createdByFromJson(json['created_by'] as List),
+      seasons: (json['seasons'] as List<dynamic>)
+          .map((e) =>
+              TvSeriesSingleSeasonDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$TvSeriesDetailsDtoImplToJson(
+        _$TvSeriesDetailsDtoImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'number_of_seasons': instance.numberOfSeasons,
+      'first_air_date': instance.firstAirDate,
+      'adult': instance.adult,
+      'overview': instance.overview,
+      'genres': instance.genres,
+      'created_by': instance.createdBy,
+      'seasons': instance.seasons,
+    };
+
+_$TvSeriesSingleSeasonDtoImpl _$$TvSeriesSingleSeasonDtoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TvSeriesSingleSeasonDtoImpl(
+      airDate: json['air_date'] as String,
+      episodeCount: json['episode_count'] as int,
+      seasonNumber: json['season_number'] as int,
+    );
+
+Map<String, dynamic> _$$TvSeriesSingleSeasonDtoImplToJson(
+        _$TvSeriesSingleSeasonDtoImpl instance) =>
+    <String, dynamic>{
+      'air_date': instance.airDate,
+      'episode_count': instance.episodeCount,
+      'season_number': instance.seasonNumber,
+    };
