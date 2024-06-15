@@ -63,7 +63,7 @@ class MyNetflixPageContent extends StatelessWidget {
                 DownloadedEpisodesList(
                   counter: releaseMonths
                       .toList(), 
-                  covers: state.myList.map((movie) => movie.cover).toList(),
+                  covers: state.myList.map((movie) => movie.cover ?? '').toList(),
                   titles: state.myList
                       .map((movie) => movie.title)
                       .toList(), 
@@ -78,14 +78,14 @@ class MyNetflixPageContent extends StatelessWidget {
                 const SizedBox(height: 13),
                 CategoryShare(
                   title: 'My list',
-                  covers: state.myList.map((movie) => movie.poster).toList(),
+                  covers: state.myList.map((movie) => movie.poster ?? '').toList(),
                   showViewAll: true,
                 ),
                 const SizedBox(height: 13),
                 CategoryShare(
                   title: 'Watched trailers',
                   covers: state.europeanSeries
-                      .map((movie) => movie.poster)
+                      .map((movie) => movie.poster ?? '')
                       .toList(),
                   showViewAll: false,
                 ),

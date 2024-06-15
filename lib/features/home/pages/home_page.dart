@@ -111,13 +111,13 @@ class HomePage extends StatelessWidget {
                       Category(
                           title: 'My list',
                           covers: state.myList
-                              .map((movie) => movie.poster)
+                              .map((movie) => movie.poster ?? '')
                               .toList(),
                           showViewAll: true),
                       Category(
                           title: 'European series',
                           covers: state.europeanSeries
-                              .map((movie) => movie.poster)
+                              .map((movie) => movie.poster ?? '')
                               .toList(),
                           showViewAll: false),
                       Category(
@@ -129,7 +129,7 @@ class HomePage extends StatelessWidget {
                       Category(
                           title: 'Netflix exclusives',
                           covers: state.netflixExclusives
-                              .map((movie) => movie.poster)
+                              .map((movie) => movie.poster ?? '')
                               .toList(),
                           showViewAll: false),
                       const SizedBox(height: 30),

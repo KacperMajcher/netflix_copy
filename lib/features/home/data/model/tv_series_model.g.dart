@@ -10,8 +10,8 @@ _$TvSeriesModelImpl _$$TvSeriesModelImplFromJson(Map<String, dynamic> json) =>
     _$TvSeriesModelImpl(
       id: json['id'] as int,
       netflixSeries: json['netflix_series'] as bool? ?? false,
-      cover: json['backdrop_path'] as String,
-      poster: json['poster_path'] as String,
+      cover: json['backdrop_path'] as String?,
+      poster: json['poster_path'] as String?,
       title: json['original_name'] as String,
       release: json['first_air_date'] as String,
       overview: json['overview'] as String,
@@ -26,4 +26,38 @@ Map<String, dynamic> _$$TvSeriesModelImplToJson(_$TvSeriesModelImpl instance) =>
       'original_name': instance.title,
       'first_air_date': instance.release,
       'overview': instance.overview,
+    };
+
+_$TvSeriesDetailsModelImpl _$$TvSeriesDetailsModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TvSeriesDetailsModelImpl(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      numberOfSeasons: json['number_of_seasons'] as int,
+      uploaded: json['first_air_date'] as String,
+      adult: json['adult'] as bool,
+      overview: json['overview'] as String,
+      genres:
+          (json['genres'] as List<dynamic>).map((e) => e as String).toList(),
+      createdBy: (json['created_by'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      seasons: (json['seasons'] as List<dynamic>)
+          .map((e) =>
+              TvSeriesSingleSeasonDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$TvSeriesDetailsModelImplToJson(
+        _$TvSeriesDetailsModelImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'number_of_seasons': instance.numberOfSeasons,
+      'first_air_date': instance.uploaded,
+      'adult': instance.adult,
+      'overview': instance.overview,
+      'genres': instance.genres,
+      'created_by': instance.createdBy,
+      'seasons': instance.seasons,
     };
