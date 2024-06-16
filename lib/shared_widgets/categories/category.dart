@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:netflix_copy/features/details/pages/details_page.dart';
 import 'package:netflix_copy/features/home/data/model/tv_series_model.dart';
 
 class Category extends StatelessWidget {
@@ -55,11 +58,25 @@ class Category extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     color: const Color(0xFF736D6D),
                   ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: Image.network(
-                      item.poster ?? '',
-                      fit: BoxFit.cover,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailsPage(
+                            id: item.id,
+                            cover: item.cover,
+                          ),
+                        ),
+                      );
+                      log('series ID: ${item.id}');
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.network(
+                        item.poster ?? '',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
