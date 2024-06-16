@@ -28,7 +28,7 @@ class TvSeriesDetailsModel with _$TvSeriesDetailsModel {
     required int id,
     required String name,
     required int numberOfSeasons,
-    @JsonKey(name: 'first_air_date') required String uploaded,
+    @JsonKey(name: 'first_air_date') required String release,
     required bool adult,
     required String overview,
     required List<String> genres,

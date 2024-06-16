@@ -51,7 +51,7 @@ class TvSeriesRepository {
         id: tvSeriesDto.id,
         name: tvSeriesDto.name,
         numberOfSeasons: tvSeriesDto.numberOfSeasons,
-        uploaded: tvSeriesDto.firstAirDate,
+        release: tvSeriesDto.firstAirDate,
         adult: tvSeriesDto.adult,
         overview: tvSeriesDto.overview,
         genres: tvSeriesDto.genres,

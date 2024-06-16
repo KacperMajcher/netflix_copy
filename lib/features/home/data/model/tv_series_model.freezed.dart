@@ -301,7 +301,7 @@ mixin _$TvSeriesDetailsModel {
   String get name => throw _privateConstructorUsedError;
   int get numberOfSeasons => throw _privateConstructorUsedError;
   @JsonKey(name: 'first_air_date')
-  String get uploaded => throw _privateConstructorUsedError;
+  String get release => throw _privateConstructorUsedError;
   bool get adult => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
   List<String> get genres => throw _privateConstructorUsedError;
@@ -325,7 +325,7 @@ abstract class $TvSeriesDetailsModelCopyWith<$Res> {
       {int id,
       String name,
       int numberOfSeasons,
-      @JsonKey(name: 'first_air_date') String uploaded,
+      @JsonKey(name: 'first_air_date') String release,
       bool adult,
       String overview,
       List<String> genres,
@@ -350,7 +350,7 @@ class _$TvSeriesDetailsModelCopyWithImpl<$Res,
     Object? id = null,
     Object? name = null,
     Object? numberOfSeasons = null,
-    Object? uploaded = null,
+    Object? release = null,
     Object? adult = null,
     Object? overview = null,
     Object? genres = null,
@@ -370,9 +370,9 @@ class _$TvSeriesDetailsModelCopyWithImpl<$Res,
           ? _value.numberOfSeasons
           : numberOfSeasons // ignore: cast_nullable_to_non_nullable
               as int,
-      uploaded: null == uploaded
-          ? _value.uploaded
-          : uploaded // ignore: cast_nullable_to_non_nullable
+      release: null == release
+          ? _value.release
+          : release // ignore: cast_nullable_to_non_nullable
               as String,
       adult: null == adult
           ? _value.adult
@@ -410,7 +410,7 @@ abstract class _$$TvSeriesDetailsModelImplCopyWith<$Res>
       {int id,
       String name,
       int numberOfSeasons,
-      @JsonKey(name: 'first_air_date') String uploaded,
+      @JsonKey(name: 'first_air_date') String release,
       bool adult,
       String overview,
       List<String> genres,
@@ -432,7 +432,7 @@ class __$$TvSeriesDetailsModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? numberOfSeasons = null,
-    Object? uploaded = null,
+    Object? release = null,
     Object? adult = null,
     Object? overview = null,
     Object? genres = null,
@@ -452,9 +452,9 @@ class __$$TvSeriesDetailsModelImplCopyWithImpl<$Res>
           ? _value.numberOfSeasons
           : numberOfSeasons // ignore: cast_nullable_to_non_nullable
               as int,
-      uploaded: null == uploaded
-          ? _value.uploaded
-          : uploaded // ignore: cast_nullable_to_non_nullable
+      release: null == release
+          ? _value.release
+          : release // ignore: cast_nullable_to_non_nullable
               as String,
       adult: null == adult
           ? _value.adult
@@ -488,7 +488,7 @@ class _$TvSeriesDetailsModelImpl implements _TvSeriesDetailsModel {
       {required this.id,
       required this.name,
       required this.numberOfSeasons,
-      @JsonKey(name: 'first_air_date') required this.uploaded,
+      @JsonKey(name: 'first_air_date') required this.release,
       required this.adult,
       required this.overview,
       required final List<String> genres,
@@ -509,7 +509,7 @@ class _$TvSeriesDetailsModelImpl implements _TvSeriesDetailsModel {
   final int numberOfSeasons;
   @override
   @JsonKey(name: 'first_air_date')
-  final String uploaded;
+  final String release;
   @override
   final bool adult;
   @override
@@ -540,7 +540,7 @@ class _$TvSeriesDetailsModelImpl implements _TvSeriesDetailsModel {
 
   @override
   String toString() {
-    return 'TvSeriesDetailsModel(id: $id, name: $name, numberOfSeasons: $numberOfSeasons, uploaded: $uploaded, adult: $adult, overview: $overview, genres: $genres, createdBy: $createdBy, seasons: $seasons)';
+    return 'TvSeriesDetailsModel(id: $id, name: $name, numberOfSeasons: $numberOfSeasons, release: $release, adult: $adult, overview: $overview, genres: $genres, createdBy: $createdBy, seasons: $seasons)';
   }
 
   @override
@@ -552,8 +552,7 @@ class _$TvSeriesDetailsModelImpl implements _TvSeriesDetailsModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.numberOfSeasons, numberOfSeasons) ||
                 other.numberOfSeasons == numberOfSeasons) &&
-            (identical(other.uploaded, uploaded) ||
-                other.uploaded == uploaded) &&
+            (identical(other.release, release) || other.release == release) &&
             (identical(other.adult, adult) || other.adult == adult) &&
             (identical(other.overview, overview) ||
                 other.overview == overview) &&
@@ -570,7 +569,7 @@ class _$TvSeriesDetailsModelImpl implements _TvSeriesDetailsModel {
       id,
       name,
       numberOfSeasons,
-      uploaded,
+      release,
       adult,
       overview,
       const DeepCollectionEquality().hash(_genres),
@@ -598,7 +597,7 @@ abstract class _TvSeriesDetailsModel implements TvSeriesDetailsModel {
           {required final int id,
           required final String name,
           required final int numberOfSeasons,
-          @JsonKey(name: 'first_air_date') required final String uploaded,
+          @JsonKey(name: 'first_air_date') required final String release,
           required final bool adult,
           required final String overview,
           required final List<String> genres,
@@ -617,7 +616,7 @@ abstract class _TvSeriesDetailsModel implements TvSeriesDetailsModel {
   int get numberOfSeasons;
   @override
   @JsonKey(name: 'first_air_date')
-  String get uploaded;
+  String get release;
   @override
   bool get adult;
   @override

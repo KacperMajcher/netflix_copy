@@ -34,7 +34,7 @@ _$TvSeriesDetailsModelImpl _$$TvSeriesDetailsModelImplFromJson(
       id: json['id'] as int,
       name: json['name'] as String,
       numberOfSeasons: json['number_of_seasons'] as int,
-      uploaded: json['first_air_date'] as String,
+      release: json['first_air_date'] as String,
       adult: json['adult'] as bool,
       overview: json['overview'] as String,
       genres:
@@ -54,7 +54,7 @@ Map<String, dynamic> _$$TvSeriesDetailsModelImplToJson(
       'id': instance.id,
       'name': instance.name,
       'number_of_seasons': instance.numberOfSeasons,
-      'first_air_date': instance.uploaded,
+      'first_air_date': instance.release,
       'adult': instance.adult,
       'overview': instance.overview,
       'genres': instance.genres,
