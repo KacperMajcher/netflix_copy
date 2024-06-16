@@ -8,11 +8,13 @@ class Player extends StatelessWidget {
     required this.borderRadiusValue,
   });
 
-  final String cover;
+  final String? cover;
   final double borderRadiusValue;
 
   @override
   Widget build(BuildContext context) {
+    final isCoverValid = cover != null && cover!.isNotEmpty;
+
     return Container(
       height: 222,
       decoration: BoxDecoration(
@@ -20,10 +22,15 @@ class Player extends StatelessWidget {
           topLeft: Radius.circular(borderRadiusValue),
           topRight: Radius.circular(borderRadiusValue),
         ),
-        image: DecorationImage(
-          image: NetworkImage('${Config.imageReader}$cover'),
-          fit: BoxFit.fill,
-        ),
+        color: isCoverValid ? null : Colors.black,
+        image: isCoverValid
+            ? DecorationImage(
+                image: NetworkImage(
+                  '${Config.imageReader}$cover',
+                ),
+                fit: BoxFit.fill,
+              )
+            : null,
       ),
       child: Stack(
         children: [
