@@ -20,8 +20,11 @@ class NotificationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const DetailsPage()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    const DetailsPage(id: 0, cover: ''))); //TODO TODO Adapt items to conform with structure
       },
       child: SizedBox(
         child: Padding(

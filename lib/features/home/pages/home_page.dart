@@ -54,7 +54,11 @@ class HomePage extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const DetailsPage(),
+                                      builder: (context) => DetailsPage(
+                                        id: state.netflixExclusives.first.id,
+                                        cover:
+                                            state.netflixExclusives.first.cover,
+                                      ),
                                     ),
                                   );
                                 },
@@ -109,29 +113,26 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       Category(
-                          title: 'My list',
-                          covers: state.myList
-                              .map((movie) => movie.poster ?? '')
-                              .toList(),
-                          showViewAll: true),
+                        title: 'My list',
+                        items: state.myList,
+                        showViewAll: true,
+                      ),
                       Category(
-                          title: 'European series',
-                          covers: state.europeanSeries
-                              .map((movie) => movie.poster ?? '')
-                              .toList(),
-                          showViewAll: false),
+                        title: 'European series',
+                        items: state.europeanSeries,
+                        showViewAll: false,
+                      ),
+                      //  Category(
+                      //     title: 'Popular now',
+                      //     covers: state.popularNow
+                      //         .map((movie) => movie.poster)
+                      //         .toList(),
+                      //     showViewAll: false), TODO Adapt items to conform with structure in Category widget
                       Category(
-                          title: 'Popular now',
-                          covers: state.popularNow
-                              .map((movie) => movie.poster)
-                              .toList(),
-                          showViewAll: false),
-                      Category(
-                          title: 'Netflix exclusives',
-                          covers: state.netflixExclusives
-                              .map((movie) => movie.poster ?? '')
-                              .toList(),
-                          showViewAll: false),
+                        title: 'Netflix exclusives',
+                        items: state.netflixExclusives,
+                        showViewAll: false,
+                      ),
                       const SizedBox(height: 30),
                     ],
                   ),

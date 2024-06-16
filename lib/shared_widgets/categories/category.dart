@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_copy/features/home/data/model/tv_series_model.dart';
 
 class Category extends StatelessWidget {
   const Category({
     super.key,
     required this.title,
-    required this.covers,
+    required this.items,
     this.showViewAll = false,
   });
 
   final String title;
-  final List<String> covers;
+  final List<TvSeriesModel> items;
   final bool showViewAll;
 
   @override
@@ -42,8 +43,9 @@ class Category extends StatelessWidget {
           height: 150,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: covers.length,
+            itemCount: items.length,
             itemBuilder: (context, index) {
+              final item = items[index];
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Container(
@@ -56,7 +58,7 @@ class Category extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.network(
-                      covers[index],
+                      item.poster ?? '',
                       fit: BoxFit.cover,
                     ),
                   ),
