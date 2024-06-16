@@ -11,6 +11,7 @@ import 'package:netflix_copy/shared_widgets/cast_list.dart';
 import 'package:netflix_copy/shared_widgets/description.dart';
 import 'package:netflix_copy/shared_widgets/episode_title.dart';
 import 'package:netflix_copy/shared_widgets/logos/netflix_series_logo.dart';
+import 'package:netflix_copy/shared_widgets/production_specyfication.dart';
 import 'package:netflix_copy/shared_widgets/production_title.dart';
 
 class DetailsPageContent extends StatefulWidget {
@@ -36,6 +37,8 @@ class _DetailsPageContentState extends State<DetailsPageContent> {
 
   @override
   Widget build(BuildContext context) {
+    String releaseYear = widget.details.release.split('-').first;
+
     return SizedBox(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -54,7 +57,10 @@ class _DetailsPageContentState extends State<DetailsPageContent> {
                   fontSize: 18,
                 ),
                 const SizedBox(height: 5),
-                const ProductionSpecyfication(),
+                ProductionSpecyfication(
+                  numberOfSeasons: widget.details.numberOfSeasons,
+                  releaseYear: releaseYear,
+                ),
                 const PlayButton(
                   backgroundColor: Colors.white,
                   textColor: Colors.black,
